@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
 
@@ -22,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
         fit: StackFit.expand,
         children: [
           // Background
-          Image.asset('assets/images/traditional-bg.png', fit: BoxFit.cover),
+          Image.asset('assets/images/traditional_bg.png', fit: BoxFit.cover),
 
           // Content
           SingleChildScrollView(
@@ -32,11 +33,11 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 // Logo
                 Image.asset(
-                  'assets/images/JP Cineplex.png',
-                  width: 120,
+                  'assets/images/JP_cineplex.png',
+                  width: 100,
                   fit: BoxFit.contain,
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 80),
 
                 // Title
                 Text(
@@ -139,16 +140,16 @@ class _LoginPageState extends State<LoginPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset(
-                      'assets/images/facebook.png', // add this asset
-                      width: 36,
-                      height: 36,
+                    SvgPicture.asset(
+                      'assets/images/facebook.svg',
+                      width: 24,
+                      height: 24,
                     ),
                     const SizedBox(width: 20),
-                    Image.asset(
-                      'assets/images/google.png', // add this asset
-                      width: 36,
-                      height: 36,
+                    SvgPicture.asset(
+                      'assets/images/google.svg',
+                      width: 24,
+                      height: 24,
                     ),
                   ],
                 ),
