@@ -36,23 +36,23 @@ class _LanguageSelectPageState extends State<LanguageSelectPage> {
                     width: 100,
                     fit: BoxFit.contain,
                   ),
-                  const SizedBox(height: 80),
+                  const SizedBox(height: 120),
 
                   // Prompt text
                   Text(
                     'Please Select Your Language',
                     style: TextStyles.size14PromptLight,
                   ),
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 100),
 
                   // Language options
                   _buildLanguageOption('English'),
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 10),
                   _buildLanguageOption('Sinhala'),
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 10),
                   _buildLanguageOption('Tamil'),
 
-                  const SizedBox(height: 50),
+                  const SizedBox(height: 110),
 
                   // Select button
                   GestureDetector(
@@ -70,16 +70,13 @@ class _LanguageSelectPageState extends State<LanguageSelectPage> {
                       }
                     },
                     child: Container(
-                      width: 350,
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                      decoration: BoxDecoration(
-                        color: AppColours.gold,
-                        borderRadius: BorderRadius.circular(6),
-                      ),
+                      width: 380,
+                      padding: const EdgeInsets.symmetric(vertical: 11),
+                      decoration: BoxDecoration(color: AppColours.gold),
                       alignment: Alignment.center,
                       child: Text(
                         'SELECT',
-                        style: TextStyles.size14ConthraxSemiBold,
+                        style: TextStyles.size14WeightBoldConthraxSemiBoldblack,
                       ),
                     ),
                   ),
