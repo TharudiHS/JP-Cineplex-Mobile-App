@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jp_cinema_app/screens/login_page.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
 
@@ -58,8 +59,13 @@ class _LanguageSelectPageState extends State<LanguageSelectPage> {
                   GestureDetector(
                     onTap: () {
                       if (selectedLanguage != null) {
-                        // Navigate to next page or save selection
-                        Navigator.pushReplacementNamed(context, '/home');
+                        // Navigate to login page
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const LoginPage(),
+                          ),
+                        );
                       } else {
                         // Show warning if no language selected
                         ScaffoldMessenger.of(context).showSnackBar(
