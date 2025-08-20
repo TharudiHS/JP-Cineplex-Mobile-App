@@ -19,9 +19,10 @@ class TextStyles {
     fontWeight: FontWeight.bold,
     color: AppColours.white,
   );
-  static const TextStyle size14ConthraxSemiBold = TextStyle(
+  static const TextStyle size14WeightBoldConthraxSemiBoldblack = TextStyle(
     fontFamily: 'Conthrax',
     fontSize: 14,
+    fontWeight: FontWeight.bold,
     color: AppColours.black,
   );
 }
