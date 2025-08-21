@@ -38,26 +38,20 @@ class _VerificationPageState extends State<VerificationPage> {
                   width: 100,
                   fit: BoxFit.contain,
                 ),
-                const SizedBox(height: 60),
+                const SizedBox(height: 90),
 
                 // Title
                 Text(
                   "Verification",
-                  style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
-                    fontSize: 20,
-                    color: AppColours.white,
-                  ),
+                  style: TextStyles.size20WeightBoldConthraxSemiBold,
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 40),
 
                 // Subtitle
                 Text(
-                  "Enter the verification code sent to your mobile or email",
+                  "Enter the verification code sent to your \nmobile or email",
                   textAlign: TextAlign.center,
-                  style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
-                    fontSize: 12,
-                    color: AppColours.lightGrey,
-                  ),
+                  style: TextStyles.size14PromptLight,
                 ),
                 const SizedBox(height: 40),
 
@@ -114,16 +108,12 @@ class _VerificationPageState extends State<VerificationPage> {
                   },
                   child: Container(
                     width: double.infinity,
-                    padding: const EdgeInsets.symmetric(vertical: 14),
-                    decoration: BoxDecoration(
-                      color: AppColours.gold,
-                      borderRadius: BorderRadius.circular(4),
-                    ),
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    decoration: BoxDecoration(color: AppColours.gold),
                     alignment: Alignment.center,
                     child: Text(
                       "VERIFY",
-                      style: TextStyles.size14WeightBoldConthraxSemiBold
-                          .copyWith(color: AppColours.black, fontSize: 16),
+                      style: TextStyles.size14WeightBoldConthraxSemiBoldblack,
                     ),
                   ),
                 ),
@@ -134,18 +124,18 @@ class _VerificationPageState extends State<VerificationPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Didn’t receive a code? ",
-                      style: TextStyles.size14WeightBoldConthraxSemiBold
-                          .copyWith(fontSize: 12, color: AppColours.white),
+                      "Didn't receive a code?",
+                      style: TextStyles.size14PromptLight.copyWith(
+                        decoration: TextDecoration.none,
+                      ),
                     ),
                     GestureDetector(
-                      onTap: () {
-                        // Handle resend code logic
-                      },
+                      onTap: () {},
                       child: Text(
                         "Resend Now",
-                        style: TextStyles.size14WeightBoldConthraxSemiBold
-                            .copyWith(fontSize: 12, color: AppColours.gold),
+                        style: TextStyles.size14PromptLightgold.copyWith(
+                          decoration: TextDecoration.underline,
+                        ),
                       ),
                     ),
                   ],
