@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jp_cinema_app/screens/login_page.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
 
@@ -16,71 +17,64 @@ class PasswordUpdatedPage extends StatelessWidget {
           Image.asset('assets/images/traditional_bg.png', fit: BoxFit.cover),
 
           // Content
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // Logo
-              Image.asset(
-                'assets/images/JP_cineplex.png',
-                width: 100,
-                fit: BoxFit.contain,
-              ),
-              const SizedBox(height: 60),
-
-              // Success Check Icon
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade900,
-                  shape: BoxShape.circle,
+          SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 40),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // Logo
+                Image.asset(
+                  'assets/images/JP_cineplex.png',
+                  width: 100,
+                  fit: BoxFit.contain,
                 ),
-                padding: const EdgeInsets.all(18),
-                child: const Icon(Icons.check, color: Colors.white, size: 40),
-              ),
-              const SizedBox(height: 40),
+                const SizedBox(height: 90),
 
-              // Title
-              Text(
-                "Password Updated",
-                style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
-                  fontSize: 20,
-                  color: AppColours.white,
-                ),
-              ),
-              const SizedBox(height: 10),
-
-              // Subtitle
-              Text(
-                "Your password has been updated!",
-                style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
-                  fontSize: 12,
-                  color: AppColours.lightGrey,
-                ),
-              ),
-              const SizedBox(height: 40),
-
-              // Back to Login Button
-              GestureDetector(
-                onTap: () {
-                  Navigator.popUntil(context, (route) => route.isFirst);
-                },
-                child: Container(
-                  width: 220,
-                  padding: const EdgeInsets.symmetric(vertical: 14),
+                // Success Check Icon
+                Container(
                   decoration: BoxDecoration(
-                    color: AppColours.gold,
-                    borderRadius: BorderRadius.circular(4),
+                    color: Colors.grey.shade900,
+                    shape: BoxShape.circle,
                   ),
-                  alignment: Alignment.center,
-                  child: Text(
-                    "BACK TO LOGIN",
-                    style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
-                      color: AppColours.black,
-                      fontSize: 16,
+                  padding: const EdgeInsets.all(18),
+                  child: const Icon(Icons.check, color: Colors.white, size: 40),
+                ),
+                const SizedBox(height: 40),
+
+                // Title
+                Text(
+                  "Password Updated",
+                  style: TextStyles.size20WeightBoldConthraxSemiBold,
+                ),
+                const SizedBox(height: 10),
+
+                // Subtitle
+                Text(
+                  "Your password has been updated!",
+                  style: TextStyles.size14PromptLight,
+                ),
+                const SizedBox(height: 40),
+
+                // Back to Login Button
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (_) => const LoginPage()),
+                    );
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    decoration: BoxDecoration(color: AppColours.gold),
+                    alignment: Alignment.center,
+                    child: Text(
+                      "BACK TO LOGIN",
+                      style: TextStyles.size14WeightBoldConthraxSemiBoldblack,
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),
