@@ -37,15 +37,12 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                   width: 100,
                   fit: BoxFit.contain,
                 ),
-                const SizedBox(height: 60),
+                const SizedBox(height: 90),
 
                 // Title
                 Text(
                   "New Password",
-                  style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
-                    fontSize: 20,
-                    color: AppColours.white,
-                  ),
+                  style: TextStyles.size20WeightBoldConthraxSemiBold,
                 ),
                 const SizedBox(height: 40),
 
@@ -100,16 +97,12 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                   },
                   child: Container(
                     width: double.infinity,
-                    padding: const EdgeInsets.symmetric(vertical: 14),
-                    decoration: BoxDecoration(
-                      color: AppColours.gold,
-                      borderRadius: BorderRadius.circular(4),
-                    ),
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    decoration: BoxDecoration(color: AppColours.gold),
                     alignment: Alignment.center,
                     child: Text(
                       "RESET NOW",
-                      style: TextStyles.size14WeightBoldConthraxSemiBold
-                          .copyWith(color: AppColours.black, fontSize: 16),
+                      style: TextStyles.size14WeightBoldConthraxSemiBoldblack,
                     ),
                   ),
                 ),
@@ -131,14 +124,8 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // Label
-        Text(
-          "$label:",
-          style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
-            fontSize: 12,
-            color: AppColours.lightGrey,
-          ),
-        ),
-        const SizedBox(height: 6),
+        Text("$label:", style: TextStyles.size14PromptLight),
+        const SizedBox(height: 20),
 
         // Input
         TextField(
@@ -147,16 +134,13 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
           style: const TextStyle(color: Colors.white),
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: TextStyle(color: AppColours.lightGrey, fontSize: 12),
+            hintStyle: TextStyles.size13WeightBoldConthraxSemiBoldgreyC2,
             filled: true,
             fillColor: AppColours.darkGrey,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(4),
-              borderSide: BorderSide.none,
-            ),
+            border: OutlineInputBorder(borderSide: BorderSide.none),
             contentPadding: const EdgeInsets.symmetric(
-              horizontal: 12,
-              vertical: 14,
+              horizontal: 15,
+              vertical: 10,
             ),
           ),
         ),
