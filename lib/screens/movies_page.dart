@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
+import 'package:jp_cinema_app/screens/home_page.dart';
 
 class MoviesPage extends StatelessWidget {
   const MoviesPage({super.key});
@@ -12,7 +13,7 @@ class MoviesPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Top Header with Logo + Movies Title
+            // JP Cineplex Logo + Home
             Container(
               color: AppColours.grey11,
               padding: const EdgeInsets.symmetric(vertical: 18),
@@ -38,10 +39,7 @@ class MoviesPage extends StatelessWidget {
             // Search bar
             Container(
               margin: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: AppColours.grey11,
-                borderRadius: BorderRadius.circular(6),
-              ),
+              decoration: BoxDecoration(color: AppColours.grey11),
               child: const TextField(
                 style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
@@ -55,7 +53,7 @@ class MoviesPage extends StatelessWidget {
 
             // Tabs (Now Showing / Coming Soon / See It First)
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 6),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -79,7 +77,7 @@ class MoviesPage extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
 
             // Movies List
             _movieItem(
@@ -89,8 +87,14 @@ class MoviesPage extends StatelessWidget {
             ),
             _movieItem("assets/images/Moana2.jpg", "Moana 2", "2h 30m"),
             _movieItem("assets/images/game.jpg", "Game Changer", "2h 30m"),
+            _movieItem("assets/images/sonic3.jpeg", "The Hedgehog 3", "2h 30m"),
+            _movieItem(
+              "assets/images/denof.jpeg",
+              "Den of Thieves 2 Pantera",
+              "2h 30m",
+            ),
 
-            const SizedBox(height: 20),
+            const SizedBox(height: 30),
 
             // Bottom Navigation
             Container(
@@ -127,21 +131,16 @@ class MoviesPage extends StatelessWidget {
           // Movie Poster
           ClipRRect(
             borderRadius: BorderRadius.circular(4),
-            child: Image.asset(img, height: 120, width: 90, fit: BoxFit.cover),
+            child: Image.asset(img, height: 150, width: 130, fit: BoxFit.cover),
           ),
-          const SizedBox(width: 12),
+          const SizedBox(width: 20),
 
           // Movie Info
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  title,
-                  style: TextStyles.size16WeightBoldConthraxSemiBold.copyWith(
-                    color: Colors.white,
-                  ),
-                ),
+                Text(title, style: TextStyles.size15Promptwhite),
                 const SizedBox(height: 8),
 
                 // Genre tags
@@ -149,10 +148,10 @@ class MoviesPage extends StatelessWidget {
                   spacing: 6,
                   runSpacing: 6,
                   children: [
-                    _tag("ACTION", AppColours.grey11, Colors.white),
-                    _tag("SCI-FI", AppColours.grey11, Colors.white),
-                    _tag("DRAMA", AppColours.gold, AppColours.black),
-                    _tag("2D", AppColours.blue, Colors.white),
+                    _tag("ACTION", AppColours.grey58, Colors.white),
+                    _tag("SCI-FI", AppColours.grey75, Colors.white),
+                    _tag("DRAMA", AppColours.goldDark, AppColours.black),
+                    _tag("2D", AppColours.purple, Colors.white),
                     _tag("3D", AppColours.orange, Colors.white),
                     _tag("DOLBY ATMOS", AppColours.blue, Colors.white),
                     _tag("U/A", AppColours.green, Colors.white),
@@ -161,12 +160,7 @@ class MoviesPage extends StatelessWidget {
 
                 const SizedBox(height: 6),
 
-                Text(
-                  duration,
-                  style: TextStyles.size14PromptLight.copyWith(
-                    color: Colors.white,
-                  ),
-                ),
+                Text(duration, style: TextStyles.size12Promptwhite),
 
                 const SizedBox(height: 6),
 
@@ -201,18 +195,8 @@ class MoviesPage extends StatelessWidget {
   static Widget _tag(String text, Color bg, Color textColor) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-      decoration: BoxDecoration(
-        color: bg,
-        borderRadius: BorderRadius.circular(3),
-      ),
-      child: Text(
-        text,
-        style: TextStyle(
-          fontSize: 10,
-          fontWeight: FontWeight.bold,
-          color: textColor,
-        ),
-      ),
+      decoration: BoxDecoration(color: bg),
+      child: Text(text, style: TextStyles.size10Promptwhite),
     );
   }
 
