@@ -41,4 +41,9 @@ class TextStyles {
     fontWeight: FontWeight.bold,
     color: AppColours.greyC2,
   );
+  static const TextStyle size12PromptLight = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 12,
+    color: AppColours.lightGrey,
+  );
 }
