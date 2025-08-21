@@ -64,4 +64,21 @@ class TextStyles {
     fontWeight: FontWeight.bold,
     color: AppColours.gold,
   );
+  static const TextStyle size15Promptwhite = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 15,
+    color: AppColours.white,
+  );
+  static const TextStyle size12WeightBoldConthraxSemiBoldgold = TextStyle(
+    fontFamily: 'Conthrax',
+    fontSize: 12,
+    fontWeight: FontWeight.bold,
+    color: AppColours.gold,
+  );
+  static const TextStyle size11WeightBoldConthraxSemiBoldgold = TextStyle(
+    fontFamily: 'Conthrax',
+    fontSize: 11,
+    fontWeight: FontWeight.bold,
+    color: AppColours.gold,
+  );
 }
