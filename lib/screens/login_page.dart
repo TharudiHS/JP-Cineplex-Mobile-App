@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:jp_cinema_app/screens/reset_password_page.dart';
+import 'package:jp_cinema_app/screens/signup_page.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
 
@@ -47,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                     color: AppColours.white,
                   ),
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 50),
 
                 // Email Field
                 _buildInputField(
@@ -165,7 +167,14 @@ class _LoginPageState extends State<LoginPage> {
                           .copyWith(fontSize: 12, color: AppColours.white),
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SignUpPage(),
+                          ),
+                        );
+                      },
                       child: Text(
                         "Sign up",
                         style: TextStyles.size14WeightBoldConthraxSemiBold
@@ -178,7 +187,14 @@ class _LoginPageState extends State<LoginPage> {
 
                 // Forgot Password
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ResetPasswordPage(),
+                      ),
+                    );
+                  },
                   child: Text(
                     "Forgot Password?",
                     style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
