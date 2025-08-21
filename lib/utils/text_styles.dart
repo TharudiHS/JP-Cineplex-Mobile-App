@@ -25,4 +25,20 @@ class TextStyles {
     fontWeight: FontWeight.bold,
     color: AppColours.black,
   );
+  static const TextStyle size14PromptLightgold = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 14,
+    color: AppColours.gold,
+  );
+  static const TextStyle size14PromptRegular = TextStyle(
+    fontFamily: 'Prompt-Regular',
+    fontSize: 14,
+    color: AppColours.grey9A,
+  );
+  static const TextStyle size13WeightBoldConthraxSemiBoldgreyC2 = TextStyle(
+    fontFamily: 'Conthrax',
+    fontSize: 13,
+    fontWeight: FontWeight.bold,
+    color: AppColours.greyC2,
+  );
 }
