@@ -45,10 +45,7 @@ class _LoginPageState extends State<LoginPage> {
                 // Title
                 Text(
                   "Login",
-                  style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
-                    fontSize: 20,
-                    color: AppColours.white,
-                  ),
+                  style: TextStyles.size20WeightBoldConthraxSemiBold,
                 ),
                 const SizedBox(height: 50),
 
