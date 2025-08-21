@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:jp_cinema_app/screens/home_page.dart';
 import 'package:jp_cinema_app/screens/reset_password_page.dart';
 import 'package:jp_cinema_app/screens/signup_page.dart';
 import '../utils/app_colours.dart';
@@ -89,7 +90,12 @@ class _LoginPageState extends State<LoginPage> {
 
                 // Login Button
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const HomePage()),
+                    );
+                  },
                   child: Container(
                     width: double.infinity,
                     padding: const EdgeInsets.symmetric(vertical: 10),
