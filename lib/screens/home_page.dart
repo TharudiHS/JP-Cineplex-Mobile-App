@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jp_cinema_app/screens/movies_page.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
 
@@ -261,11 +262,23 @@ class HomePage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  _pngNavItem("assets/images/home.png", "Home"),
-                  _pngNavItem("assets/images/movies.png", "Movies"),
-                  _pngNavItem("assets/images/book.png", "Book"),
-                  _pngNavItem("assets/images/food.png", "Food & Drink"),
-                  _pngNavItem("assets/images/more.png", "More"),
+                  _pngNavItem("assets/images/home.png", "Home", () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const HomePage()),
+                    );
+                  }),
+                  _pngNavItem("assets/images/movies.png", "Movies", () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MoviesPage(),
+                      ),
+                    );
+                  }),
+                  _pngNavItem("assets/images/book.png", "Book", null),
+                  _pngNavItem("assets/images/food.png", "Food & Drink", null),
+                  _pngNavItem("assets/images/more.png", "More", null),
                 ],
               ),
             ),
@@ -334,14 +347,21 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  static Widget _pngNavItem(String iconPath, String label) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Image.asset(iconPath, height: 25, width: 25),
-        const SizedBox(height: 6),
-        Text(label, style: TextStyles.size11WeightBoldConthraxSemiBoldgold),
-      ],
+  static Widget _pngNavItem(
+    String iconPath,
+    String label,
+    VoidCallback? onTap,
+  ) {
+    return GestureDetector(
+      onTap: onTap, // will be null for items without a page
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset(iconPath, height: 25, width: 25),
+          const SizedBox(height: 6),
+          Text(label, style: TextStyles.size11WeightBoldConthraxSemiBoldgold),
+        ],
+      ),
     );
   }
 
