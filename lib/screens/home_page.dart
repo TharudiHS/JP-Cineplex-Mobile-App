@@ -2,266 +2,305 @@ import 'package:flutter/material.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColours.black,
-      body: Stack(
-        fit: StackFit.expand,
-        children: [
-          // Background
-          Image.asset("assets/images/traditional_bg.png", fit: BoxFit.cover),
-
-          SafeArea(
-            child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Logo + Line + Home Title
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 15),
+              alignment: Alignment.center,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Logo & Home Title
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 20),
-                    child: Center(
-                      child: Column(
-                        children: [
-                          Image.asset(
-                            "assets/images/JP_cineplex.png",
-                            width: 80,
-                          ),
-                          const SizedBox(height: 6),
-                          Text(
-                            "Home",
-                            style: TextStyles.size14WeightBoldConthraxSemiBold
-                                .copyWith(
-                                  fontSize: 16,
-                                  color: AppColours.white,
-                                ),
-                          ),
-                        ],
-                      ),
+                  Image.asset("assets/images/JP_cineplex.png", height: 50),
+                  const SizedBox(height: 8),
+                  Container(
+                    height: 1,
+                    width: double.infinity,
+                    color: Colors.white, // White divider line
+                  ),
+                  const SizedBox(height: 6),
+                  Text(
+                    "Home",
+                    style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
+                      color: Colors.white,
                     ),
                   ),
-
-                  // My Orders Section
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 12,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "My Orders",
-                          style: TextStyles.size14WeightBoldConthraxSemiBold
-                              .copyWith(fontSize: 14, color: AppColours.white),
-                        ),
-                        const SizedBox(height: 8),
-                        Text(
-                          "No upcoming orders.. / 02 Movie tickets ordered →",
-                          style: TextStyle(
-                            color: AppColours.lightGrey,
-                            fontSize: 12,
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-                        GestureDetector(
-                          onTap: () {},
-                          child: Text(
-                            "ALL TICKET ORDERS →",
-                            style: TextStyle(
-                              color: AppColours.gold,
-                              fontSize: 12,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  Divider(color: AppColours.darkGrey),
-
-                  // Now Showing & Coming Soon Section
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 10,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Now Showing",
-                          style: TextStyle(
-                            color: AppColours.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          "Coming Soon",
-                          style: TextStyle(
-                            color: AppColours.white,
-                            fontSize: 14,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  SizedBox(
-                    height: 220,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      children: [
-                        _buildMovieCard(
-                          "assets/images/movie1.png",
-                          "Madha Gaja Raja",
-                        ),
-                        const SizedBox(width: 12),
-                        _buildMovieCard("assets/images/movie2.png", "Moana 2"),
-                        const SizedBox(width: 12),
-                        _buildMovieCard(
-                          "assets/images/movie3.png",
-                          "Other Movie",
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  const SizedBox(height: 10),
-
-                  // See It First Section
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 10,
-                    ),
-                    child: Text(
-                      "See It First",
-                      style: TextStyle(
-                        color: AppColours.white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-
-                  SizedBox(
-                    height: 180,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      children: [
-                        _buildMovieCard("assets/images/movie4.png", "Sonic 3"),
-                        const SizedBox(width: 12),
-                        _buildMovieCard(
-                          "assets/images/movie5.png",
-                          "Den of Thieves 2",
-                        ),
-                        const SizedBox(width: 12),
-                        _buildMovieCard("assets/images/movie2.png", "Moana 2"),
-                      ],
-                    ),
-                  ),
-
-                  const SizedBox(height: 80), // space for bottom nav
                 ],
               ),
             ),
-          ),
-        ],
-      ),
 
-      // Bottom Navigation Bar
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: (index) {
-          setState(() {
-            _selectedIndex = index;
-          });
-        },
-        backgroundColor: Colors.black,
-        selectedItemColor: AppColours.gold,
-        unselectedItemColor: AppColours.lightGrey,
-        type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.movie), label: "Movies"),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.confirmation_num),
-            label: "Book",
+            // My Orders
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "My Orders",
+                    style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
+                      color: Colors.white,
+                    ),
+                  ),
+                  const SizedBox(height: 5),
+                  Text(
+                    "No upcoming orders… / 02 Movie tickets ordered",
+                    style: TextStyles.size14PromptLight.copyWith(
+                      color: Colors.white70,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Text(
+                      "ALL TICKET ORDERS →",
+                      style: TextStyles.size14PromptLightgold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            // Now Showing / Coming Soon
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Row(
+                children: [
+                  Text(
+                    "Now Showing",
+                    style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
+                      color: AppColours.gold,
+                    ),
+                  ),
+                  const SizedBox(width: 20),
+                  Text(
+                    "Coming Soon",
+                    style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 10),
+
+            // Movie Posters
+            SizedBox(
+              height: 250,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                children: [
+                  _movieCard(
+                    "assets/images/madha_gaja_raja.jpg",
+                    "Madha Gaja Raja",
+                  ),
+                  _movieCard("assets/images/moana2.jpg", "Moana 2"),
+                  _movieCard("assets/images/ghost_hunter.jpg", "Ghost Hunter"),
+                ],
+              ),
+            ),
+
+            // --- SEE IT FIRST SECTION ---
+            const SizedBox(height: 20),
+            Center(
+              child: Text(
+                "See It First",
+                style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
+                  color: AppColours.gold,
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+
+            // Bottom Navigation with PNG icons
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 12),
+              color: AppColours.darkGrey,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  _pngNavItem("assets/icons/home.png", "Home"),
+                  _pngNavItem("assets/icons/movies.png", "Movies"),
+                  _pngNavItem("assets/icons/book.png", "Book"),
+                  _pngNavItem("assets/icons/food.png", "Food & Drink"),
+                  _pngNavItem("assets/icons/more.png", "More"),
+                ],
+              ),
+            ),
+
+            // Three Movies under See it First
+            SizedBox(
+              height: 250,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                children: [
+                  _movieCard("assets/images/sonic3.jpg", "The Hedgehog 3"),
+                  _movieCard(
+                    "assets/images/den_of_thieves2.jpg",
+                    "Den of Thieves 2 Pantera",
+                  ),
+                  _movieCard("assets/images/moana2.jpg", "Moana 2"),
+                ],
+              ),
+            ),
+
+            // Screens
+            const SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Text(
+                "Screens",
+                style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+            Image.asset("assets/images/screen1.jpg"),
+            const SizedBox(height: 5),
+            Center(
+              child: Text(
+                "Screen 1 - JP Cineplex Kandy",
+                style: TextStyles.size14PromptLight.copyWith(
+                  color: Colors.white70,
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+            Center(
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColours.gold,
+                  foregroundColor: AppColours.black,
+                ),
+                onPressed: () {},
+                child: const Text("DISCOVER MORE"),
+              ),
+            ),
+            const SizedBox(height: 15),
+            Center(
+              child: Text(
+                "View More Screens ↓",
+                style: TextStyles.size14PromptLightgold,
+              ),
+            ),
+
+            // Deals
+            const SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Text(
+                "Deals",
+                style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+            _dealCard(
+              "assets/images/deal_upgrade.jpg",
+              "Upgrade Your Experience",
+            ),
+            _dealCard(
+              "assets/images/deal_half_price.jpg",
+              "Half Price Wednesdays",
+            ),
+            const SizedBox(height: 10),
+            Center(
+              child: Text(
+                "View More Deals ↓",
+                style: TextStyles.size14PromptLightgold,
+              ),
+            ),
+            const SizedBox(height: 20),
+          ],
+        ),
+      ),
+    );
+  }
+
+  // Movie Card Widget
+  static Widget _movieCard(String imgPath, String title) {
+    return Container(
+      margin: const EdgeInsets.only(right: 12),
+      width: 150,
+      child: Column(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: Image.asset(imgPath, height: 180, fit: BoxFit.cover),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.fastfood),
-            label: "Food & Drink",
+          const SizedBox(height: 5),
+          Text(
+            title,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: const TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.menu), label: "More"),
+          const SizedBox(height: 5),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: AppColours.gold,
+              foregroundColor: AppColours.black,
+            ),
+            onPressed: () {},
+            child: const Text("TIMES & TICKETS"),
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildMovieCard(String image, String title) {
-    return Container(
-      width: 140,
-      decoration: BoxDecoration(
-        color: AppColours.darkGrey,
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Expanded(
-            child: ClipRRect(
-              borderRadius: const BorderRadius.vertical(
-                top: Radius.circular(8),
-              ),
-              child: Image.asset(image, fit: BoxFit.cover),
+  // Navigation Item with PNG icons
+  static Widget _pngNavItem(String iconPath, String label) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Image.asset(iconPath, height: 24, width: 24),
+        const SizedBox(height: 5),
+        Text(label, style: const TextStyle(color: Colors.white, fontSize: 12)),
+      ],
+    );
+  }
+
+  // Deal Card
+  static Widget _dealCard(String imgPath, String title) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10),
+        child: Stack(
+          alignment: Alignment.bottomLeft,
+          children: [
+            Image.asset(
+              imgPath,
+              height: 120,
+              fit: BoxFit.cover,
+              width: double.infinity,
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(6),
-            child: Text(
-              title,
-              style: const TextStyle(color: Colors.white, fontSize: 12),
-              textAlign: TextAlign.center,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-            ),
-          ),
-          GestureDetector(
-            onTap: () {},
-            child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 8),
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: AppColours.black,
-                borderRadius: const BorderRadius.vertical(
-                  bottom: Radius.circular(8),
-                ),
-              ),
+            Container(
+              color: Colors.black54,
+              padding: const EdgeInsets.all(8),
+              width: double.infinity,
               child: Text(
-                "TIMES & TICKETS",
-                style: TextStyle(
-                  color: AppColours.gold,
-                  fontSize: 10,
-                  fontWeight: FontWeight.bold,
-                ),
+                title,
+                style: const TextStyle(color: Colors.white, fontSize: 14),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
