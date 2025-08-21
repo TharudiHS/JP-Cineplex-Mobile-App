@@ -10,16 +10,17 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  final TextEditingController fullNameController = TextEditingController();
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController mobileController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmPasswordController =
-      TextEditingController();
-  final TextEditingController dobController = TextEditingController();
+  final TextEditingController fullNameCtrl = TextEditingController();
+  final TextEditingController emailCtrl = TextEditingController();
+  final TextEditingController mobileCtrl = TextEditingController();
+  final TextEditingController dobCtrl = TextEditingController();
+  final TextEditingController passwordCtrl = TextEditingController();
+  final TextEditingController confirmPasswordCtrl = TextEditingController();
 
-  String? selectedGender;
+  String? gender; // Male / Female / Other
   bool agreeToTerms = false;
+  bool _hidePassword = true;
+  bool _hideConfirm = true;
 
   @override
   Widget build(BuildContext context) {
@@ -28,232 +29,177 @@ class _SignUpPageState extends State<SignUpPage> {
       body: Stack(
         fit: StackFit.expand,
         children: [
-          // Background Image
+          // background
           Image.asset('assets/images/traditional_bg.png', fit: BoxFit.cover),
 
-          // Content
-          SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 40),
-            child: Column(
-              children: [
-                // Logo
-                Image.asset(
-                  'assets/images/JP_cineplex.png',
-                  width: 100,
-                  fit: BoxFit.contain,
-                ),
-                const SizedBox(height: 40),
+          // content
+          SafeArea(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+              child: Column(
+                children: [
+                  // logo
+                  Image.asset('assets/images/JP_cineplex.png', width: 100),
+                  const SizedBox(height: 28),
 
-                // Title
-                Text(
-                  "Sign up now",
-                  style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
-                    fontSize: 20,
-                    color: AppColours.white,
-                  ),
-                ),
-                const SizedBox(height: 40),
-
-                // Full Name
-                _buildInputField(
-                  "Full Name *",
-                  "Enter your full name",
-                  fullNameController,
-                ),
-                const SizedBox(height: 16),
-
-                // Email
-                _buildInputField(
-                  "Email Address *",
-                  "Enter your email",
-                  emailController,
-                ),
-                const SizedBox(height: 16),
-
-                // Mobile
-                _buildInputField(
-                  "Mobile Number *",
-                  "Enter your mobile number",
-                  mobileController,
-                  keyboardType: TextInputType.phone,
-                ),
-                const SizedBox(height: 16),
-
-                // Gender Dropdown
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Gender *",
-                      style: TextStyles.size14WeightBoldConthraxSemiBold
-                          .copyWith(fontSize: 12, color: AppColours.lightGrey),
+                  // title
+                  Text(
+                    'Sign up now',
+                    textAlign: TextAlign.center,
+                    style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
+                      fontSize: 20,
+                      color: AppColours.white,
                     ),
-                    const SizedBox(height: 6),
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 12),
-                      decoration: BoxDecoration(
-                        color: AppColours.darkGrey,
-                        borderRadius: BorderRadius.circular(4),
+                  ),
+                  const SizedBox(height: 28),
+
+                  // Full name (hint only)
+                  _textField(
+                    controller: fullNameCtrl,
+                    hint: 'Full Name *',
+                    keyboardType: TextInputType.name,
+                  ),
+                  const SizedBox(height: 12),
+
+                  // Email
+                  _textField(
+                    controller: emailCtrl,
+                    hint: 'Email Address *',
+                    keyboardType: TextInputType.emailAddress,
+                  ),
+                  const SizedBox(height: 12),
+
+                  // Mobile
+                  _textField(
+                    controller: mobileCtrl,
+                    hint: 'Mobile Number *',
+                    keyboardType: TextInputType.phone,
+                  ),
+                  const SizedBox(height: 12),
+
+                  // Gender dropdown styled like a field (hint only)
+                  _genderField(),
+                  const SizedBox(height: 12),
+
+                  // Date of Birth (opens date picker)
+                  GestureDetector(
+                    onTap: _pickDate,
+                    child: AbsorbPointer(
+                      child: _textField(
+                        controller: dobCtrl,
+                        hint: 'Date of Birth',
+                        suffixIcon: const Icon(
+                          Icons.calendar_today,
+                          size: 18,
+                          color: Colors.white70,
+                        ),
                       ),
-                      child: DropdownButtonHideUnderline(
-                        child: DropdownButton<String>(
-                          value: selectedGender,
-                          dropdownColor: AppColours.darkGrey,
-                          hint: Text(
-                            "Select Gender",
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+
+                  // Password
+                  _textField(
+                    controller: passwordCtrl,
+                    hint: 'Password *',
+                    obscureText: _hidePassword,
+                    suffixIcon: IconButton(
+                      padding: EdgeInsets.zero,
+                      icon: Icon(
+                        _hidePassword ? Icons.visibility_off : Icons.visibility,
+                        size: 20,
+                        color: Colors.white70,
+                      ),
+                      onPressed: () =>
+                          setState(() => _hidePassword = !_hidePassword),
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+
+                  // Confirm Password
+                  _textField(
+                    controller: confirmPasswordCtrl,
+                    hint: 'Confirm Password *',
+                    obscureText: _hideConfirm,
+                    suffixIcon: IconButton(
+                      padding: EdgeInsets.zero,
+                      icon: Icon(
+                        _hideConfirm ? Icons.visibility_off : Icons.visibility,
+                        size: 20,
+                        color: Colors.white70,
+                      ),
+                      onPressed: () =>
+                          setState(() => _hideConfirm = !_hideConfirm),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+
+                  // Terms & conditions
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Checkbox(
+                        value: agreeToTerms,
+                        activeColor: AppColours.gold,
+                        checkColor: Colors.black,
+                        side: BorderSide(color: AppColours.lightGrey),
+                        onChanged: (v) =>
+                            setState(() => agreeToTerms = v ?? false),
+                      ),
+                      const SizedBox(width: 6),
+                      Expanded(
+                        child: Text.rich(
+                          TextSpan(
+                            text: 'By signing up you agree to the website ',
                             style: TextStyle(
                               color: AppColours.lightGrey,
-                              fontSize: 12,
+                              fontSize: 11,
                             ),
-                          ),
-                          style: const TextStyle(color: Colors.white),
-                          items: ["Male", "Female", "Other"]
-                              .map(
-                                (gender) => DropdownMenuItem(
-                                  value: gender,
-                                  child: Text(gender),
+                            children: [
+                              TextSpan(
+                                text: 'terms and conditions',
+                                style: TextStyle(
+                                  color: AppColours.gold,
+                                  fontSize: 11,
                                 ),
-                              )
-                              .toList(),
-                          onChanged: (value) {
-                            setState(() {
-                              selectedGender = value;
-                            });
-                          },
+                              ),
+                              const TextSpan(text: ' and '),
+                              TextSpan(
+                                text: 'privacy policy',
+                                style: TextStyle(
+                                  color: AppColours.gold,
+                                  fontSize: 11,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 16),
-
-                // Date of Birth
-                GestureDetector(
-                  onTap: () async {
-                    DateTime? pickedDate = await showDatePicker(
-                      context: context,
-                      initialDate: DateTime(2000),
-                      firstDate: DateTime(1900),
-                      lastDate: DateTime.now(),
-                      builder: (context, child) {
-                        return Theme(
-                          data: Theme.of(context).copyWith(
-                            colorScheme: ColorScheme.dark(
-                              primary: AppColours.gold,
-                              onPrimary: Colors.black,
-                              surface: AppColours.darkGrey,
-                              onSurface: Colors.white,
-                            ),
-                          ),
-                          child: child!,
-                        );
-                      },
-                    );
-
-                    if (pickedDate != null) {
-                      dobController.text =
-                          "${pickedDate.day}/${pickedDate.month}/${pickedDate.year}";
-                    }
-                  },
-                  child: AbsorbPointer(
-                    child: _buildInputField(
-                      "Date of Birth",
-                      "Select your date of birth",
-                      dobController,
-                    ),
+                    ],
                   ),
-                ),
-                const SizedBox(height: 16),
+                  const SizedBox(height: 14),
 
-                // Password
-                _buildInputField(
-                  "Password *",
-                  "Enter your password",
-                  passwordController,
-                  isPassword: true,
-                ),
-                const SizedBox(height: 16),
-
-                // Confirm Password
-                _buildInputField(
-                  "Confirm Password *",
-                  "Re-enter your password",
-                  confirmPasswordController,
-                  isPassword: true,
-                ),
-                const SizedBox(height: 20),
-
-                // Terms & Conditions Checkbox
-                Row(
-                  children: [
-                    Checkbox(
-                      value: agreeToTerms,
-                      activeColor: AppColours.gold,
-                      onChanged: (value) {
-                        setState(() {
-                          agreeToTerms = value ?? false;
-                        });
-                      },
-                    ),
-                    Expanded(
-                      child: Text.rich(
-                        TextSpan(
-                          text: "By signing up you agree to the website ",
-                          style: TextStyle(
-                            color: AppColours.lightGrey,
-                            fontSize: 11,
-                          ),
-                          children: [
-                            TextSpan(
-                              text: "terms and conditions",
-                              style: TextStyle(
-                                color: AppColours.gold,
-                                fontSize: 11,
-                              ),
-                            ),
-                            const TextSpan(text: " and "),
-                            TextSpan(
-                              text: "privacy policy",
-                              style: TextStyle(
-                                color: AppColours.gold,
-                                fontSize: 11,
-                              ),
-                            ),
-                          ],
-                        ),
+                  // SIGN UP button
+                  GestureDetector(
+                    onTap: _onSignUp,
+                    child: Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      decoration: BoxDecoration(
+                        color: AppColours.gold,
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      alignment: Alignment.center,
+                      child: Text(
+                        'SIGN UP',
+                        style: TextStyles.size14WeightBoldConthraxSemiBold
+                            .copyWith(color: AppColours.black, fontSize: 16),
                       ),
                     ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-
-                // Sign Up Button
-                GestureDetector(
-                  onTap: () {
-                    if (!_validateInputs()) return;
-
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text("Account created successfully!"),
-                      ),
-                    );
-                  },
-                  child: Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.symmetric(vertical: 14),
-                    decoration: BoxDecoration(
-                      color: AppColours.gold,
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                    alignment: Alignment.center,
-                    child: Text(
-                      "SIGN UP",
-                      style: TextStyles.size14WeightBoldConthraxSemiBold
-                          .copyWith(color: AppColours.black, fontSize: 16),
-                    ),
                   ),
-                ),
-              ],
+                  const SizedBox(height: 20),
+                ],
+              ),
             ),
           ),
         ],
@@ -261,78 +207,123 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 
-  Widget _buildInputField(
-    String label,
-    String hint,
-    TextEditingController controller, {
-    bool isPassword = false,
+  /// TextField that only shows a hint (no label)
+  Widget _textField({
+    required TextEditingController controller,
+    required String hint,
+    bool obscureText = false,
     TextInputType keyboardType = TextInputType.text,
+    Widget? suffixIcon,
   }) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          label,
-          style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
-            fontSize: 12,
-            color: AppColours.lightGrey,
-          ),
+    return TextField(
+      controller: controller,
+      obscureText: obscureText,
+      keyboardType: keyboardType,
+      style: const TextStyle(color: Colors.white),
+      decoration: InputDecoration(
+        hintText: hint,
+        hintStyle: TextStyle(color: AppColours.lightGrey, fontSize: 12),
+        filled: true,
+        fillColor: AppColours.darkGrey,
+        suffixIcon: suffixIcon,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(4),
+          borderSide: BorderSide.none,
         ),
-        const SizedBox(height: 6),
-        TextField(
-          controller: controller,
-          obscureText: isPassword,
-          keyboardType: keyboardType,
-          style: const TextStyle(color: Colors.white),
-          decoration: InputDecoration(
-            hintText: hint,
-            hintStyle: TextStyle(color: AppColours.lightGrey, fontSize: 12),
-            filled: true,
-            fillColor: AppColours.darkGrey,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(4),
-              borderSide: BorderSide.none,
-            ),
-            contentPadding: const EdgeInsets.symmetric(
-              horizontal: 12,
-              vertical: 14,
-            ),
-          ),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 12,
+          vertical: 14,
         ),
-      ],
+      ),
     );
   }
 
-  bool _validateInputs() {
-    if (fullNameController.text.isEmpty ||
-        emailController.text.isEmpty ||
-        mobileController.text.isEmpty ||
-        selectedGender == null ||
-        dobController.text.isEmpty ||
-        passwordController.text.isEmpty ||
-        confirmPasswordController.text.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Please fill in all required fields.")),
-      );
-      return false;
-    }
+  /// Dropdown styled to look like the other fields, with hint only.
+  Widget _genderField() {
+    return Container(
+      height: 48,
+      padding: const EdgeInsets.symmetric(horizontal: 12),
+      decoration: BoxDecoration(
+        color: AppColours.darkGrey,
+        borderRadius: BorderRadius.circular(4),
+      ),
+      child: DropdownButtonHideUnderline(
+        child: DropdownButton<String>(
+          value: gender,
+          dropdownColor: AppColours.darkGrey,
+          isExpanded: true,
+          icon: const Icon(Icons.keyboard_arrow_down, color: Colors.white70),
+          style: const TextStyle(color: Colors.white),
+          hint: Text(
+            'Gender',
+            style: TextStyle(color: AppColours.lightGrey, fontSize: 12),
+          ),
+          items: const [
+            DropdownMenuItem(value: 'Male', child: Text('Male')),
+            DropdownMenuItem(value: 'Female', child: Text('Female')),
+            DropdownMenuItem(value: 'Other', child: Text('Other')),
+          ],
+          onChanged: (v) => setState(() => gender = v),
+        ),
+      ),
+    );
+  }
 
-    if (passwordController.text != confirmPasswordController.text) {
+  Future<void> _pickDate() async {
+    final now = DateTime.now();
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: DateTime(now.year - 18, now.month, now.day),
+      firstDate: DateTime(1900),
+      lastDate: now,
+      builder: (context, child) {
+        return Theme(
+          data: Theme.of(context).copyWith(
+            colorScheme: ColorScheme.dark(
+              primary: AppColours.gold,
+              onPrimary: Colors.black,
+              surface: AppColours.darkGrey,
+              onSurface: Colors.white,
+            ),
+          ),
+          child: child!,
+        );
+      },
+    );
+    if (picked != null) {
+      dobCtrl.text =
+          '${picked.day.toString().padLeft(2, '0')}/'
+          '${picked.month.toString().padLeft(2, '0')}/'
+          '${picked.year}';
+    }
+  }
+
+  void _onSignUp() {
+    if (fullNameCtrl.text.trim().isEmpty ||
+        emailCtrl.text.trim().isEmpty ||
+        mobileCtrl.text.trim().isEmpty ||
+        gender == null ||
+        dobCtrl.text.trim().isEmpty ||
+        passwordCtrl.text.isEmpty ||
+        confirmPasswordCtrl.text.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please fill in all required fields.')),
+      );
+      return;
+    }
+    if (passwordCtrl.text != confirmPasswordCtrl.text) {
       ScaffoldMessenger.of(
         context,
-      ).showSnackBar(const SnackBar(content: Text("Passwords do not match.")));
-      return false;
+      ).showSnackBar(const SnackBar(content: Text('Passwords do not match.')));
+      return;
     }
-
     if (!agreeToTerms) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text("You must agree to the terms & conditions."),
+          content: Text('You must agree to the terms & conditions.'),
         ),
       );
-      return false;
+      return;
     }
-
-    return true;
   }
 }
