@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jp_cinema_app/screens/login_page.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
 import 'verification.dart'; // adjust path if this file lives elsewhere
@@ -35,53 +36,56 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                   width: 100,
                   fit: BoxFit.contain,
                 ),
-                const SizedBox(height: 60),
+                const SizedBox(height: 90),
 
                 // Title
                 Text(
-                  "Reset Password",
-                  style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
-                    fontSize: 20,
-                    color: AppColours.white,
-                  ),
+                  "Reset your Password",
+                  style: TextStyles.size20WeightBoldConthraxSemiBold,
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 40),
 
-                // Instruction (as in your screenshot)
+                // Instruction
                 Text(
                   "Enter your email address or mobile number below.",
                   textAlign: TextAlign.center,
-                  style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
-                    fontSize: 12,
-                    color: AppColours.lightGrey,
-                  ),
+                  style: TextStyles.size12PromptLight,
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 40),
 
-                // Input box with hint text inside the black box
+                //  hint text inside the black box
                 TextField(
                   controller: emailOrMobileController,
                   keyboardType: TextInputType.emailAddress,
                   style: const TextStyle(color: Colors.white),
                   decoration: InputDecoration(
-                    hintText: "Email or Mobile Number",
-                    hintStyle: TextStyle(
-                      color: AppColours.lightGrey,
-                      fontSize: 12,
+                    hint: RichText(
+                      text: TextSpan(
+                        text: "Email Address or Mobile Number ",
+                        style:
+                            TextStyles.size13WeightBoldConthraxSemiBoldgreyC2,
+                        children: [
+                          TextSpan(
+                            text: "*",
+                            style: const TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     filled: true,
                     fillColor: AppColours.darkGrey,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(4),
-                      borderSide: BorderSide.none,
-                    ),
+                    border: OutlineInputBorder(borderSide: BorderSide.none),
                     contentPadding: const EdgeInsets.symmetric(
-                      horizontal: 12,
-                      vertical: 14,
+                      horizontal: 15,
+                      vertical: 9,
                     ),
                   ),
                 ),
-                const SizedBox(height: 40),
+
+                const SizedBox(height: 30),
 
                 // RESET NOW button
                 GestureDetector(
@@ -107,30 +111,41 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                   },
                   child: Container(
                     width: double.infinity,
-                    padding: const EdgeInsets.symmetric(vertical: 14),
-                    decoration: BoxDecoration(
-                      color: AppColours.gold,
-                      borderRadius: BorderRadius.circular(4),
-                    ),
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    decoration: BoxDecoration(color: AppColours.gold),
                     alignment: Alignment.center,
                     child: Text(
                       "RESET NOW",
-                      style: TextStyles.size14WeightBoldConthraxSemiBold
-                          .copyWith(color: AppColours.black, fontSize: 16),
+                      style: TextStyles.size14WeightBoldConthraxSemiBoldblack,
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 45),
 
                 // Back to Login
                 GestureDetector(
-                  onTap: () => Navigator.pop(context),
-                  child: Text(
-                    "Back to Login",
-                    style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
-                      fontSize: 12,
-                      color: AppColours.gold,
-                      decoration: TextDecoration.underline,
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (_) => const LoginPage()),
+                    );
+                  },
+                  child: RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "Back to ",
+                          style: TextStyles.size14PromptLight.copyWith(
+                            decoration: TextDecoration.none,
+                          ),
+                        ),
+                        TextSpan(
+                          text: "Login",
+                          style: TextStyles.size14PromptLightgold.copyWith(
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
