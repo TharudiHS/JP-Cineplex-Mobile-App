@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
                   Container(
                     height: 1,
                     width: double.infinity,
-                    color: Colors.white, // White divider line
+                    color: Colors.white,
                   ),
                   const SizedBox(height: 6),
                   Text(
@@ -98,12 +98,9 @@ class HomePage extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 children: [
-                  _movieCard(
-                    "assets/images/madha_gaja_raja.jpg",
-                    "Madha Gaja Raja",
-                  ),
-                  _movieCard("assets/images/moana2.jpg", "Moana 2"),
-                  _movieCard("assets/images/ghost_hunter.jpg", "Ghost Hunter"),
+                  _movieCard("assets/images/madha_raja.jpg", "Madha Gaja Raja"),
+                  _movieCard("assets/images/Moana2.jpg", "Moana 2"),
+                  _movieCard("assets/images/game.jpg", "Game Changer"),
                 ],
               ),
             ),
@@ -127,11 +124,11 @@ class HomePage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  _pngNavItem("assets/icons/home.png", "Home"),
-                  _pngNavItem("assets/icons/movies.png", "Movies"),
-                  _pngNavItem("assets/icons/book.png", "Book"),
-                  _pngNavItem("assets/icons/food.png", "Food & Drink"),
-                  _pngNavItem("assets/icons/more.png", "More"),
+                  _pngNavItem("assets/images/home.png", "Home"),
+                  _pngNavItem("assets/images/movies.png", "Movies"),
+                  _pngNavItem("assets/images/book.png", "Book"),
+                  _pngNavItem("assets/images/food.png", "Food & Drink"),
+                  _pngNavItem("assets/images/more.png", "More"),
                 ],
               ),
             ),
@@ -143,12 +140,12 @@ class HomePage extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 children: [
-                  _movieCard("assets/images/sonic3.jpg", "The Hedgehog 3"),
+                  _movieCard("assets/images/sonic3.jpeg", "The Hedgehog 3"),
                   _movieCard(
-                    "assets/images/den_of_thieves2.jpg",
+                    "assets/images/denof.jpeg",
                     "Den of Thieves 2 Pantera",
                   ),
-                  _movieCard("assets/images/moana2.jpg", "Moana 2"),
+                  _movieCard("assets/images/Moana2.jpg", "Moana 2"),
                 ],
               ),
             ),
@@ -165,7 +162,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            Image.asset("assets/images/screen1.jpg"),
+            Image.asset("assets/images/screens.png"),
             const SizedBox(height: 5),
             Center(
               child: Text(
@@ -207,11 +204,11 @@ class HomePage extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             _dealCard(
-              "assets/images/deal_upgrade.jpg",
+              "assets/images/deal_upgrade.png",
               "Upgrade Your Experience",
             ),
             _dealCard(
-              "assets/images/deal_half_price.jpg",
+              "assets/images/deal_half_price.png",
               "Half Price Wednesdays",
             ),
             const SizedBox(height: 10),
