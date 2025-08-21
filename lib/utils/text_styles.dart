@@ -46,4 +46,22 @@ class TextStyles {
     fontSize: 12,
     color: AppColours.lightGrey,
   );
+  static const TextStyle size16WeightBoldConthraxSemiBold = TextStyle(
+    fontFamily: 'Conthrax',
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+    color: AppColours.white,
+  );
+  static const TextStyle size18WeightBoldConthraxSemiBold = TextStyle(
+    fontFamily: 'Conthrax',
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    color: AppColours.white,
+  );
+  static const TextStyle size14WeightBoldConthraxSemiBoldgold = TextStyle(
+    fontFamily: 'Conthrax',
+    fontSize: 14,
+    fontWeight: FontWeight.bold,
+    color: AppColours.gold,
+  );
 }
