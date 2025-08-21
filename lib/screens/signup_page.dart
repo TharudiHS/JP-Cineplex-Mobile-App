@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jp_cinema_app/screens/login_page.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
 
@@ -153,7 +154,10 @@ class _SignUpPageState extends State<SignUpPage> {
                   // SIGN UP button
                   GestureDetector(
                     onTap: () {
-                      // UI only – no backend call
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (_) => const LoginPage()),
+                      );
                     },
                     child: Container(
                       width: double.infinity,
