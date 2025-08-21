@@ -81,4 +81,14 @@ class TextStyles {
     fontWeight: FontWeight.bold,
     color: AppColours.gold,
   );
+  static const TextStyle size10Promptwhite = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 10,
+    color: AppColours.white,
+  );
+  static const TextStyle size12Promptwhite = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 12,
+    color: AppColours.white,
+  );
 }
