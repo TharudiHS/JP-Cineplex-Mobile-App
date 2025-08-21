@@ -31,4 +31,5 @@ flutter:
     - family: Prompt
       fonts:
         - asset: assets/fonts/Prompt-Light.ttf
+        - asset: assets/fonts/Prompt-Regular.ttf
         
