@@ -40,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
                   width: 100,
                   fit: BoxFit.contain,
                 ),
-                const SizedBox(height: 80),
+                const SizedBox(height: 90),
 
                 // Title
                 Text(
