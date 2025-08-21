@@ -53,14 +53,14 @@ class _LoginPageState extends State<LoginPage> {
 
                 // Email Field
                 _buildInputField(
-                  label: "Email or Mobile Number",
                   controller: emailController,
+                  hint: "Enter your email or mobile number",
                 ),
                 const SizedBox(height: 16),
 
                 // Password Field
                 _buildInputField(
-                  label: "Password",
+                  hint: "Password",
                   controller: passwordController,
                   isPassword: true,
                 ),
@@ -213,24 +213,26 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _buildInputField({
-    required String label,
+    required String hint,
     required TextEditingController controller,
     bool isPassword = false,
   }) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        // Label with red asterisk
-        RichText(
+    return TextField(
+      controller: controller,
+      obscureText: isPassword,
+      style: const TextStyle(color: Colors.white),
+      decoration: InputDecoration(
+        // Use RichText as the hint
+        hint: RichText(
           text: TextSpan(
-            text: "$label ",
+            text: hint,
             style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
               fontSize: 12,
               color: AppColours.lightGrey,
             ),
             children: [
               TextSpan(
-                text: "*",
+                text: " *",
                 style: TextStyle(
                   color: AppColours.red,
                   fontSize: 12,
@@ -240,26 +242,17 @@ class _LoginPageState extends State<LoginPage> {
             ],
           ),
         ),
-        const SizedBox(height: 6),
-        // Input field
-        TextField(
-          controller: controller,
-          obscureText: isPassword,
-          style: const TextStyle(color: Colors.white),
-          decoration: InputDecoration(
-            filled: true,
-            fillColor: AppColours.darkGrey,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(4),
-              borderSide: BorderSide.none,
-            ),
-            contentPadding: const EdgeInsets.symmetric(
-              horizontal: 12,
-              vertical: 14,
-            ),
-          ),
+        filled: true,
+        fillColor: AppColours.darkGrey,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(4),
+          borderSide: BorderSide.none,
         ),
-      ],
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 12,
+          vertical: 14,
+        ),
+      ),
     );
   }
 }
