@@ -13,29 +13,26 @@ class HomePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Logo + Line + Home Title
+            // JP Cineplex Logo + Home
             Container(
-              padding: const EdgeInsets.symmetric(vertical: 15),
+              color: AppColours.darkGrey, // dark grey background here
+              padding: const EdgeInsets.symmetric(vertical: 18),
               alignment: Alignment.center,
               child: Column(
                 children: [
                   Image.asset("assets/images/JP_cineplex.png", height: 50),
-                  const SizedBox(height: 8),
-                  Container(
-                    height: 1,
-                    width: double.infinity,
-                    color: Colors.white,
-                  ),
-                  const SizedBox(height: 6),
+                  const SizedBox(height: 15),
+                  Container(height: 1, width: 350, color: AppColours.greyC2),
+                  const SizedBox(height: 20),
                   Text(
                     "Home",
-                    style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
-                      color: Colors.white,
-                    ),
+                    style: TextStyles.size16WeightBoldConthraxSemiBold,
                   ),
                 ],
               ),
             ),
+
+            const SizedBox(height: 30),
 
             // My Orders
             Padding(
@@ -45,28 +42,26 @@ class HomePage extends StatelessWidget {
                 children: [
                   Text(
                     "My Orders",
-                    style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
-                      color: Colors.white,
-                    ),
+                    style: TextStyles.size18WeightBoldConthraxSemiBold,
                   ),
-                  const SizedBox(height: 5),
+                  const SizedBox(height: 20),
                   Text(
-                    "No upcoming orders… / 02 Movie tickets ordered",
-                    style: TextStyles.size14PromptLight.copyWith(
-                      color: Colors.white70,
-                    ),
+                    "No upcoming orders… / 02 Movie tickets ordered →",
+                    style: TextStyles.size14PromptLight,
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 20),
                   GestureDetector(
                     onTap: () {},
                     child: Text(
                       "ALL TICKET ORDERS →",
-                      style: TextStyles.size14PromptLightgold,
+                      style: TextStyles.size14WeightBoldConthraxSemiBoldgold,
                     ),
                   ),
                 ],
               ),
             ),
+
+            _divider(),
 
             // Now Showing / Coming Soon
             Padding(
@@ -75,28 +70,26 @@ class HomePage extends StatelessWidget {
                 children: [
                   Text(
                     "Now Showing",
-                    style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
+                    style: TextStyles.size18WeightBoldConthraxSemiBold.copyWith(
                       color: AppColours.gold,
                     ),
                   ),
                   const SizedBox(width: 20),
                   Text(
                     "Coming Soon",
-                    style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
-                      color: Colors.white,
-                    ),
+                    style: TextStyles.size18WeightBoldConthraxSemiBold,
                   ),
                 ],
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
 
             // Movie Posters
             SizedBox(
-              height: 250,
+              height: 300,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 18),
                 children: [
                   _movieCard("assets/images/madha_raja.jpg", "Madha Gaja Raja"),
                   _movieCard("assets/images/Moana2.jpg", "Moana 2"),
@@ -105,33 +98,28 @@ class HomePage extends StatelessWidget {
               ),
             ),
 
-            // --- SEE IT FIRST SECTION ---
-            const SizedBox(height: 20),
+            _divider(),
+
+            // SEE IT FIRST SECTION
+            const SizedBox(height: 30),
             Center(
-              child: Text(
-                "See It First",
-                style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
-                  color: AppColours.gold,
+              child: RichText(
+                text: TextSpan(
+                  style: TextStyles.size14WeightBoldConthraxSemiBold,
+                  children: [
+                    TextSpan(
+                      text: "See It ",
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                    TextSpan(
+                      text: "First",
+                      style: TextStyle(color: AppColours.gold),
+                    ),
+                  ],
                 ),
               ),
             ),
             const SizedBox(height: 10),
-
-            // Bottom Navigation with PNG icons
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 12),
-              color: AppColours.darkGrey,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  _pngNavItem("assets/images/home.png", "Home"),
-                  _pngNavItem("assets/images/movies.png", "Movies"),
-                  _pngNavItem("assets/images/book.png", "Book"),
-                  _pngNavItem("assets/images/food.png", "Food & Drink"),
-                  _pngNavItem("assets/images/more.png", "More"),
-                ],
-              ),
-            ),
 
             // Three Movies under See it First
             SizedBox(
@@ -150,8 +138,9 @@ class HomePage extends StatelessWidget {
               ),
             ),
 
-            // Screens
-            const SizedBox(height: 20),
+            _divider(),
+
+            // Screens Section
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Text(
@@ -176,8 +165,12 @@ class HomePage extends StatelessWidget {
             Center(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColours.gold,
-                  foregroundColor: AppColours.black,
+                  backgroundColor: AppColours.black, // dark bg
+                  foregroundColor: AppColours.gold,
+                  side: const BorderSide(
+                    color: Colors.white,
+                    width: 1,
+                  ), // white border
                 ),
                 onPressed: () {},
                 child: const Text("DISCOVER MORE"),
@@ -191,8 +184,9 @@ class HomePage extends StatelessWidget {
               ),
             ),
 
+            _divider(),
+
             // Deals
-            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Text(
@@ -219,38 +213,77 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
+
+            // Bottom Navigation with PNG icons
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 12),
+              color: AppColours.darkGrey,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  _pngNavItem("assets/images/home.png", "Home"),
+                  _pngNavItem("assets/images/movies.png", "Movies"),
+                  _pngNavItem("assets/images/book.png", "Book"),
+                  _pngNavItem("assets/images/food.png", "Food & Drink"),
+                  _pngNavItem("assets/images/more.png", "More"),
+                ],
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 
+  // Divider widget
+  static Widget _divider() {
+    return Column(
+      children: [
+        const SizedBox(height: 30),
+        Container(height: 1, width: 350, color: AppColours.greyC2),
+        const SizedBox(height: 30),
+      ],
+    );
+  }
+
+  // Movie Card Widget
   // Movie Card Widget
   static Widget _movieCard(String imgPath, String title) {
     return Container(
-      margin: const EdgeInsets.only(right: 12),
+      margin: const EdgeInsets.only(right: 15),
       width: 150,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          // Movie Poster
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
-            child: Image.asset(imgPath, height: 180, fit: BoxFit.cover),
+            child: Image.asset(
+              imgPath,
+              height: 180,
+              fit: BoxFit.cover,
+              width: 150,
+            ),
           ),
-          const SizedBox(height: 5),
+          const SizedBox(height: 10),
+
+          // Movie Title
           Text(
             title,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: const TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
+            textAlign: TextAlign.center,
+            style: TextStyles.size12PromptLight,
           ),
-          const SizedBox(height: 5),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppColours.gold,
-              foregroundColor: AppColours.black,
+          const SizedBox(height: 10),
+
+          // Times & Tickets Button
+          OutlinedButton(
+            style: OutlinedButton.styleFrom(
+              minimumSize: const Size(double.infinity, 36), // full width button
+              side: const BorderSide(color: Colors.white),
+              backgroundColor: AppColours.black,
+              foregroundColor: AppColours.gold,
             ),
             onPressed: () {},
             child: const Text("TIMES & TICKETS"),
