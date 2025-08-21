@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jp_cinema_app/screens/verification.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
+import 'verification.dart'; // adjust path if this file lives elsewhere
 
 class ResetPasswordPage extends StatefulWidget {
   const ResetPasswordPage({super.key});
@@ -11,7 +11,7 @@ class ResetPasswordPage extends StatefulWidget {
 }
 
 class _ResetPasswordPageState extends State<ResetPasswordPage> {
-  final TextEditingController emailController = TextEditingController();
+  final TextEditingController emailOrMobileController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                   width: 100,
                   fit: BoxFit.contain,
                 ),
-                const SizedBox(height: 80),
+                const SizedBox(height: 60),
 
                 // Title
                 Text(
@@ -45,22 +45,63 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                     color: AppColours.white,
                   ),
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 16),
 
-                // Email Field
-                _buildInputField(
-                  label: "Email or Mobile Number",
-                  controller: emailController,
+                // Instruction (as in your screenshot)
+                Text(
+                  "Enter your email address or mobile number below.",
+                  textAlign: TextAlign.center,
+                  style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
+                    fontSize: 12,
+                    color: AppColours.lightGrey,
+                  ),
                 ),
                 const SizedBox(height: 30),
 
-                // Reset Button
+                // Input box with hint text inside the black box
+                TextField(
+                  controller: emailOrMobileController,
+                  keyboardType: TextInputType.emailAddress,
+                  style: const TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    hintText: "Email or Mobile Number",
+                    hintStyle: TextStyle(
+                      color: AppColours.lightGrey,
+                      fontSize: 12,
+                    ),
+                    filled: true,
+                    fillColor: AppColours.darkGrey,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(4),
+                      borderSide: BorderSide.none,
+                    ),
+                    contentPadding: const EdgeInsets.symmetric(
+                      horizontal: 12,
+                      vertical: 14,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 40),
+
+                // RESET NOW button
                 GestureDetector(
                   onTap: () {
+                    final value = emailOrMobileController.text.trim();
+                    if (value.isEmpty) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text(
+                            "Please enter your email address or mobile number.",
+                          ),
+                        ),
+                      );
+                      return;
+                    }
+                    // Navigate to Verification screen
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const VerificationPage(),
+                        builder: (_) => const VerificationPage(),
                       ),
                     );
                   },
@@ -73,7 +114,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                     ),
                     alignment: Alignment.center,
                     child: Text(
-                      "RESET Now",
+                      "RESET NOW",
                       style: TextStyles.size14WeightBoldConthraxSemiBold
                           .copyWith(color: AppColours.black, fontSize: 16),
                     ),
@@ -83,9 +124,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
 
                 // Back to Login
                 GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
+                  onTap: () => Navigator.pop(context),
                   child: Text(
                     "Back to Login",
                     style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
@@ -100,57 +139,6 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
           ),
         ],
       ),
-    );
-  }
-
-  Widget _buildInputField({
-    required String label,
-    required TextEditingController controller,
-    bool isPassword = false,
-  }) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        // Label with red asterisk
-        RichText(
-          text: TextSpan(
-            text: "$label ",
-            style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
-              fontSize: 12,
-              color: AppColours.lightGrey,
-            ),
-            children: [
-              TextSpan(
-                text: "*",
-                style: TextStyle(
-                  color: AppColours.red,
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
-        ),
-        const SizedBox(height: 6),
-        // Input field
-        TextField(
-          controller: controller,
-          obscureText: isPassword,
-          style: const TextStyle(color: Colors.white),
-          decoration: InputDecoration(
-            filled: true,
-            fillColor: AppColours.darkGrey,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(4),
-              borderSide: BorderSide.none,
-            ),
-            contentPadding: const EdgeInsets.symmetric(
-              horizontal: 12,
-              vertical: 14,
-            ),
-          ),
-        ),
-      ],
     );
   }
 }
