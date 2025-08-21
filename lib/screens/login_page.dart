@@ -81,8 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     Text(
                       "Remember me",
-                      style: TextStyles.size14WeightBoldConthraxSemiBold
-                          .copyWith(fontSize: 12, color: AppColours.white),
+                      style: TextStyles.size14PromptLightgold,
                     ),
                   ],
                 ),
@@ -93,16 +92,12 @@ class _LoginPageState extends State<LoginPage> {
                   onTap: () {},
                   child: Container(
                     width: double.infinity,
-                    padding: const EdgeInsets.symmetric(vertical: 14),
-                    decoration: BoxDecoration(
-                      color: AppColours.gold,
-                      borderRadius: BorderRadius.circular(4),
-                    ),
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    decoration: BoxDecoration(color: AppColours.gold),
                     alignment: Alignment.center,
                     child: Text(
                       "LOGIN",
-                      style: TextStyles.size14WeightBoldConthraxSemiBold
-                          .copyWith(color: AppColours.black, fontSize: 16),
+                      style: TextStyles.size14WeightBoldConthraxSemiBoldblack,
                     ),
                   ),
                 ),
@@ -119,14 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                      child: Text(
-                        "OR",
-                        style: TextStyles.size14WeightBoldConthraxSemiBold
-                            .copyWith(
-                              color: AppColours.lightGrey,
-                              fontSize: 12,
-                            ),
-                      ),
+                      child: Text("OR", style: TextStyles.size14PromptRegular),
                     ),
                     Expanded(
                       child: Divider(
@@ -162,9 +150,8 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Don’t have an account yet? ",
-                      style: TextStyles.size14WeightBoldConthraxSemiBold
-                          .copyWith(fontSize: 12, color: AppColours.white),
+                      "Don't have an account yet? ",
+                      style: TextStyles.size14PromptLight,
                     ),
                     GestureDetector(
                       onTap: () {
@@ -177,8 +164,7 @@ class _LoginPageState extends State<LoginPage> {
                       },
                       child: Text(
                         "Sign up",
-                        style: TextStyles.size14WeightBoldConthraxSemiBold
-                            .copyWith(fontSize: 12, color: AppColours.gold),
+                        style: TextStyles.size14PromptLightgold,
                       ),
                     ),
                   ],
@@ -197,11 +183,7 @@ class _LoginPageState extends State<LoginPage> {
                   },
                   child: Text(
                     "Forgot Password?",
-                    style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
-                      fontSize: 12,
-                      color: AppColours.gold,
-                      decoration: TextDecoration.underline,
-                    ),
+                    style: TextStyles.size14PromptLightgold,
                   ),
                 ),
               ],
@@ -222,14 +204,11 @@ class _LoginPageState extends State<LoginPage> {
       obscureText: isPassword,
       style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
-        // Use RichText as the hint
+        //  hint
         hint: RichText(
           text: TextSpan(
             text: hint,
-            style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
-              fontSize: 12,
-              color: AppColours.lightGrey,
-            ),
+            style: TextStyles.size13WeightBoldConthraxSemiBoldgreyC2,
             children: [
               TextSpan(
                 text: " *",
@@ -249,8 +228,8 @@ class _LoginPageState extends State<LoginPage> {
           borderSide: BorderSide.none,
         ),
         contentPadding: const EdgeInsets.symmetric(
-          horizontal: 12,
-          vertical: 14,
+          horizontal: 17,
+          vertical: 10,
         ),
       ),
     );
