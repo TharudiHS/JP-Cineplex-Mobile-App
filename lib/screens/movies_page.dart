@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
-import 'package:jp_cinema_app/screens/home_page.dart';
 
 class MoviesPage extends StatelessWidget {
   const MoviesPage({super.key});
