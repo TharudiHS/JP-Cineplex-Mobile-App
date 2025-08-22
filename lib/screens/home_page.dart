@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jp_cinema_app/components/app_bar2.dart';
 import 'package:jp_cinema_app/screens/movies_page.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
@@ -14,28 +15,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // JP Cineplex Logo + Home
-            Container(
-              color: AppColours.grey11,
-              padding: const EdgeInsets.symmetric(vertical: 18),
-              alignment: Alignment.center,
-              child: Column(
-                children: [
-                  Image.asset("assets/images/JP_cineplex.png", height: 50),
-                  const SizedBox(height: 15),
-                  Container(
-                    height: 0.1,
-                    width: 370,
-                    color: AppColours.lightGrey,
-                  ),
-                  const SizedBox(height: 20),
-                  Text(
-                    "Home",
-                    style: TextStyles.size16WeightBoldConthraxSemiBold,
-                  ),
-                ],
-              ),
-            ),
+            const JPAppBar2(title: "Home"),
 
             const SizedBox(height: 30),
 
