@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jp_cinema_app/components/app_bar2.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
+import 'package:jp_cinema_app/viewmodels/movie_model.dart';
 
 class MoviesPage extends StatelessWidget {
   const MoviesPage({super.key});
@@ -59,18 +60,10 @@ class MoviesPage extends StatelessWidget {
             const SizedBox(height: 20),
 
             // Movies List
-            _movieItem(
-              "assets/images/madha_raja.jpg",
-              "Madha Gaja Raja",
-              "2h 30m",
-            ),
-            _movieItem("assets/images/Moana2.jpg", "Moana 2", "2h 30m"),
-            _movieItem("assets/images/game.jpg", "Game Changer", "2h 30m"),
-            _movieItem("assets/images/sonic3.jpeg", "The Hedgehog 3", "2h 30m"),
-            _movieItem(
-              "assets/images/denof.jpeg",
-              "Den of Thieves 2 Pantera",
-              "2h 30m",
+            Column(
+              children: movieList.map((movie) {
+                return _movieItem(movie.image, movie.title, movie.duration);
+              }).toList(),
             ),
 
             const SizedBox(height: 30),
