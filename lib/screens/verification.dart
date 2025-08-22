@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jp_cinema_app/components/app_bar1.dart';
+import 'package:jp_cinema_app/components/custom_button.dart';
 import 'package:jp_cinema_app/screens/new_password_page.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
@@ -82,8 +83,9 @@ class _VerificationPageState extends State<VerificationPage> {
                 const SizedBox(height: 40),
 
                 // Verify Button
-                GestureDetector(
-                  onTap: () {
+                CustomButton(
+                  label: "VERIFY",
+                  onPressed: () {
                     String otp = _otpControllers.map((c) => c.text).join();
                     if (otp.length == 4) {
                       Navigator.push(
@@ -94,17 +96,8 @@ class _VerificationPageState extends State<VerificationPage> {
                       );
                     }
                   },
-                  child: Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    decoration: BoxDecoration(color: AppColours.gold),
-                    alignment: Alignment.center,
-                    child: Text(
-                      "VERIFY",
-                      style: TextStyles.size14WeightBoldConthraxSemiBoldblack,
-                    ),
-                  ),
                 ),
+
                 const SizedBox(height: 20),
 
                 // Resend Code

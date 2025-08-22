@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jp_cinema_app/components/custom_button.dart';
 import 'package:jp_cinema_app/screens/login_page.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
@@ -55,23 +56,15 @@ class PasswordUpdatedPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 40),
 
-                // Back to Login Button
-                GestureDetector(
-                  onTap: () {
+                // Back to Login Button using CustomButton
+                CustomButton(
+                  label: "BACK TO LOGIN",
+                  onPressed: () {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(builder: (_) => const LoginPage()),
                     );
                   },
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    decoration: BoxDecoration(color: AppColours.gold),
-                    alignment: Alignment.center,
-                    child: Text(
-                      "BACK TO LOGIN",
-                      style: TextStyles.size14WeightBoldConthraxSemiBoldblack,
-                    ),
-                  ),
                 ),
               ],
             ),

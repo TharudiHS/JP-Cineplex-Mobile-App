@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jp_cinema_app/components/app_bar1.dart';
+import 'package:jp_cinema_app/components/custom_button.dart';
+import 'package:jp_cinema_app/components/text_form.dart';
 import 'package:jp_cinema_app/screens/password_updated_page.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
@@ -35,26 +37,46 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                 const JPAppBar1(title: "New Password"),
 
                 // New Password Field
-                _buildInputField(
-                  label: "New Password",
-                  hint: "Type Your New Password",
-                  controller: newPasswordController,
-                  isPassword: true,
+                // New Password Field
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("New Password:", style: TextStyles.size14PromptLight),
+                    const SizedBox(height: 8),
+                    CustomTextFormField(
+                      controller: newPasswordController,
+                      hint: "Type Your New Password",
+                      isPassword: true,
+                      isRequired: false,
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 20),
 
                 // Confirm Password Field
-                _buildInputField(
-                  label: "Confirm Password",
-                  hint: "Re-enter Your Password",
-                  controller: confirmPasswordController,
-                  isPassword: true,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Confirm Password:",
+                      style: TextStyles.size14PromptLight,
+                    ),
+                    const SizedBox(height: 8),
+                    CustomTextFormField(
+                      controller: confirmPasswordController,
+                      hint: "Re-enter Your Password",
+                      isPassword: true,
+                      isRequired: false,
+                    ),
+                  ],
                 ),
+
                 const SizedBox(height: 40),
 
-                // Reset Now Button
-                GestureDetector(
-                  onTap: () {
+                // Reset Now Button using CustomButton
+                CustomButton(
+                  label: "RESET NOW",
+                  onPressed: () {
                     String newPass = newPasswordController.text.trim();
                     String confirmPass = confirmPasswordController.text.trim();
 
@@ -83,56 +105,12 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                       ),
                     );
                   },
-                  child: Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    decoration: BoxDecoration(color: AppColours.gold),
-                    alignment: Alignment.center,
-                    child: Text(
-                      "RESET NOW",
-                      style: TextStyles.size14WeightBoldConthraxSemiBoldblack,
-                    ),
-                  ),
                 ),
               ],
             ),
           ),
         ],
       ),
-    );
-  }
-
-  Widget _buildInputField({
-    required String label,
-    required String hint,
-    required TextEditingController controller,
-    bool isPassword = false,
-  }) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        // Label
-        Text("$label:", style: TextStyles.size14PromptLight),
-        const SizedBox(height: 20),
-
-        // Input
-        TextField(
-          controller: controller,
-          obscureText: isPassword,
-          style: const TextStyle(color: Colors.white),
-          decoration: InputDecoration(
-            hintText: hint,
-            hintStyle: TextStyles.size13WeightBoldConthraxSemiBoldgreyC2,
-            filled: true,
-            fillColor: AppColours.darkGrey,
-            border: OutlineInputBorder(borderSide: BorderSide.none),
-            contentPadding: const EdgeInsets.symmetric(
-              horizontal: 15,
-              vertical: 10,
-            ),
-          ),
-        ),
-      ],
     );
   }
 }

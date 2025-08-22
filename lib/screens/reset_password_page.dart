@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jp_cinema_app/components/app_bar1.dart';
+import 'package:jp_cinema_app/components/custom_button.dart';
+import 'package:jp_cinema_app/components/text_form.dart';
 import 'package:jp_cinema_app/screens/login_page.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
@@ -41,43 +43,19 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                 ),
                 const SizedBox(height: 40),
 
-                //  hint text inside the black box
-                TextField(
+                CustomTextFormField(
                   controller: emailOrMobileController,
+                  hint: "Email Address or Mobile Number",
+                  isRequired: true,
                   keyboardType: TextInputType.emailAddress,
-                  style: const TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
-                    hint: RichText(
-                      text: TextSpan(
-                        text: "Email Address or Mobile Number ",
-                        style:
-                            TextStyles.size13WeightBoldConthraxSemiBoldgreyC2,
-                        children: [
-                          TextSpan(
-                            text: "*",
-                            style: const TextStyle(
-                              color: Colors.red,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    filled: true,
-                    fillColor: AppColours.darkGrey,
-                    border: OutlineInputBorder(borderSide: BorderSide.none),
-                    contentPadding: const EdgeInsets.symmetric(
-                      horizontal: 15,
-                      vertical: 9,
-                    ),
-                  ),
                 ),
 
                 const SizedBox(height: 30),
 
                 // RESET NOW button
-                GestureDetector(
-                  onTap: () {
+                CustomButton(
+                  label: "RESET NOW",
+                  onPressed: () {
                     final value = emailOrMobileController.text.trim();
                     if (value.isEmpty) {
                       ScaffoldMessenger.of(context).showSnackBar(
@@ -97,17 +75,8 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                       ),
                     );
                   },
-                  child: Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    decoration: BoxDecoration(color: AppColours.gold),
-                    alignment: Alignment.center,
-                    child: Text(
-                      "RESET NOW",
-                      style: TextStyles.size14WeightBoldConthraxSemiBoldblack,
-                    ),
-                  ),
                 ),
+
                 const SizedBox(height: 45),
 
                 // Back to Login

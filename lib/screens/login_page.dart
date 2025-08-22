@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jp_cinema_app/components/app_bar1.dart';
+import 'package:jp_cinema_app/components/text_form.dart';
 import 'package:jp_cinema_app/screens/home_page.dart';
 import 'package:jp_cinema_app/screens/reset_password_page.dart';
 import 'package:jp_cinema_app/screens/signup_page.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
+import '../components/custom_button.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -38,18 +40,22 @@ class _LoginPageState extends State<LoginPage> {
                 const JPAppBar1(title: "Login"),
 
                 // Email Field
-                _buildInputField(
+                CustomTextFormField(
                   controller: emailController,
                   hint: "Enter your email or mobile number",
+                  isRequired: true,
                 ),
+
                 const SizedBox(height: 16),
 
                 // Password Field
-                _buildInputField(
-                  hint: "Password",
+                CustomTextFormField(
                   controller: passwordController,
+                  hint: "Password",
                   isPassword: true,
+                  isRequired: true,
                 ),
+
                 const SizedBox(height: 10),
 
                 // Remember me
@@ -74,24 +80,16 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height: 20),
 
                 // Login Button
-                GestureDetector(
-                  onTap: () {
+                CustomButton(
+                  label: "LOGIN",
+                  onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const HomePage()),
                     );
                   },
-                  child: Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    decoration: BoxDecoration(color: AppColours.gold),
-                    alignment: Alignment.center,
-                    child: Text(
-                      "LOGIN",
-                      style: TextStyles.size14WeightBoldConthraxSemiBoldblack,
-                    ),
-                  ),
                 ),
+
                 const SizedBox(height: 20),
 
                 // Divider OR
@@ -181,47 +179,6 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  Widget _buildInputField({
-    required String hint,
-    required TextEditingController controller,
-    bool isPassword = false,
-  }) {
-    return TextField(
-      controller: controller,
-      obscureText: isPassword,
-      style: const TextStyle(color: Colors.white),
-      decoration: InputDecoration(
-        //  hint
-        hint: RichText(
-          text: TextSpan(
-            text: hint,
-            style: TextStyles.size13WeightBoldConthraxSemiBoldgreyC2,
-            children: [
-              TextSpan(
-                text: " *",
-                style: TextStyle(
-                  color: AppColours.red,
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
-        ),
-        filled: true,
-        fillColor: AppColours.darkGrey,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(4),
-          borderSide: BorderSide.none,
-        ),
-        contentPadding: const EdgeInsets.symmetric(
-          horizontal: 17,
-          vertical: 10,
-        ),
       ),
     );
   }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jp_cinema_app/components/app_bar1.dart';
+import 'package:jp_cinema_app/components/custom_button.dart';
+import 'package:jp_cinema_app/components/text_form.dart';
 import 'package:jp_cinema_app/screens/login_page.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
@@ -43,26 +45,28 @@ class _SignUpPageState extends State<SignUpPage> {
                   const JPAppBar1(title: "Sign up now"),
 
                   // Full name
-                  _textField(
+                  CustomTextFormField(
                     controller: fullNameCtrl,
                     hint: 'Full Name',
-                    required: true,
+                    isRequired: true,
                   ),
                   const SizedBox(height: 14),
 
                   // Email
-                  _textField(
+                  CustomTextFormField(
                     controller: emailCtrl,
                     hint: 'Email Address',
-                    required: true,
+                    isRequired: true,
+                    keyboardType: TextInputType.emailAddress,
                   ),
                   const SizedBox(height: 14),
 
                   // Mobile
-                  _textField(
+                  CustomTextFormField(
                     controller: mobileCtrl,
                     hint: 'Mobile Number',
-                    required: true,
+                    isRequired: true,
+                    keyboardType: TextInputType.phone,
                   ),
                   const SizedBox(height: 14),
 
@@ -70,8 +74,8 @@ class _SignUpPageState extends State<SignUpPage> {
                   _genderField(),
                   const SizedBox(height: 14),
 
-                  // Date of Birth (just plain field with calendar icon)
-                  _textField(
+                  // Date of Birth
+                  CustomTextFormField(
                     controller: dobCtrl,
                     hint: 'Date of Birth',
                     suffixIcon: const Icon(
@@ -83,20 +87,20 @@ class _SignUpPageState extends State<SignUpPage> {
                   const SizedBox(height: 14),
 
                   // Password
-                  _textField(
+                  CustomTextFormField(
                     controller: passwordCtrl,
                     hint: 'Password',
-                    required: true,
-                    obscureText: _hidePassword,
+                    isPassword: _hidePassword,
+                    isRequired: true,
                   ),
                   const SizedBox(height: 14),
 
                   // Confirm Password
-                  _textField(
+                  CustomTextFormField(
                     controller: confirmPasswordCtrl,
                     hint: 'Confirm Password',
-                    required: true,
-                    obscureText: _hideConfirm,
+                    isPassword: _hideConfirm,
+                    isRequired: true,
                   ),
                   const SizedBox(height: 16),
 
@@ -143,71 +147,22 @@ class _SignUpPageState extends State<SignUpPage> {
                   const SizedBox(height: 14),
 
                   // SIGN UP button
-                  GestureDetector(
-                    onTap: () {
+                  CustomButton(
+                    label: "SIGN UP",
+                    onPressed: () {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(builder: (_) => const LoginPage()),
                       );
                     },
-                    child: Container(
-                      width: double.infinity,
-                      padding: const EdgeInsets.symmetric(vertical: 10),
-                      decoration: BoxDecoration(color: AppColours.gold),
-                      alignment: Alignment.center,
-                      child: Text(
-                        'SIGN UP',
-                        style: TextStyles.size14WeightBoldConthraxSemiBoldblack,
-                      ),
-                    ),
                   ),
+
                   const SizedBox(height: 20),
                 ],
               ),
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  /// TextField with red * at end if required
-  Widget _textField({
-    required TextEditingController controller,
-    required String hint,
-    bool obscureText = false,
-    bool required = false,
-    TextInputType keyboardType = TextInputType.text,
-    Widget? suffixIcon,
-  }) {
-    return TextField(
-      controller: controller,
-      obscureText: obscureText,
-      keyboardType: keyboardType,
-      style: const TextStyle(color: Colors.white),
-      decoration: InputDecoration(
-        hint: RichText(
-          text: TextSpan(
-            text: hint,
-            style: TextStyles.size13WeightBoldConthraxSemiBoldgreyC2,
-            children: required
-                ? [
-                    const TextSpan(
-                      text: ' *',
-                      style: TextStyle(color: Colors.red),
-                    ),
-                  ]
-                : [],
-          ),
-        ),
-        filled: true,
-        fillColor: AppColours.darkGrey,
-        suffixIcon: suffixIcon,
-        border: OutlineInputBorder(borderSide: BorderSide.none),
-        contentPadding: const EdgeInsets.symmetric(
-          horizontal: 15,
-          vertical: 10,
-        ),
       ),
     );
   }

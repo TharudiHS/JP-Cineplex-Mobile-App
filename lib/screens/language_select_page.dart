@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jp_cinema_app/components/custom_button.dart';
 import 'package:jp_cinema_app/screens/login_page.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
@@ -55,11 +56,12 @@ class _LanguageSelectPageState extends State<LanguageSelectPage> {
 
                   const SizedBox(height: 110),
 
-                  // Select button
-                  GestureDetector(
-                    onTap: () {
+                  // Select button using CustomButton
+                  CustomButton(
+                    label: "SELECT",
+                    width: 380,
+                    onPressed: () {
                       if (selectedLanguage != null) {
-                        // Navigate to login page
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
@@ -67,7 +69,6 @@ class _LanguageSelectPageState extends State<LanguageSelectPage> {
                           ),
                         );
                       } else {
-                        // Show warning if no language selected
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
                             content: Text('Please select a language'),
@@ -75,16 +76,6 @@ class _LanguageSelectPageState extends State<LanguageSelectPage> {
                         );
                       }
                     },
-                    child: Container(
-                      width: 380,
-                      padding: const EdgeInsets.symmetric(vertical: 11),
-                      decoration: BoxDecoration(color: AppColours.gold),
-                      alignment: Alignment.center,
-                      child: Text(
-                        'SELECT',
-                        style: TextStyles.size14WeightBoldConthraxSemiBoldblack,
-                      ),
-                    ),
                   ),
 
                   const SizedBox(height: 30),
