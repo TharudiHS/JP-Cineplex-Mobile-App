@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:jp_cinema_app/components/app_bar1.dart';
 import 'package:jp_cinema_app/screens/home_page.dart';
 import 'package:jp_cinema_app/screens/reset_password_page.dart';
 import 'package:jp_cinema_app/screens/signup_page.dart';
@@ -34,20 +35,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Logo
-                Image.asset(
-                  'assets/images/JP_cineplex.png',
-                  width: 100,
-                  fit: BoxFit.contain,
-                ),
-                const SizedBox(height: 90),
-
-                // Title
-                Text(
-                  "Login",
-                  style: TextStyles.size20WeightBoldConthraxSemiBold,
-                ),
-                const SizedBox(height: 50),
+                const JPAppBar1(title: "Login"),
 
                 // Email Field
                 _buildInputField(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jp_cinema_app/components/app_bar1.dart';
 import 'package:jp_cinema_app/screens/password_updated_page.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
@@ -31,20 +32,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Logo
-                Image.asset(
-                  'assets/images/JP_cineplex.png',
-                  width: 100,
-                  fit: BoxFit.contain,
-                ),
-                const SizedBox(height: 90),
-
-                // Title
-                Text(
-                  "New Password",
-                  style: TextStyles.size20WeightBoldConthraxSemiBold,
-                ),
-                const SizedBox(height: 40),
+                const JPAppBar1(title: "New Password"),
 
                 // New Password Field
                 _buildInputField(

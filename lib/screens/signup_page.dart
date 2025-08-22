@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jp_cinema_app/components/app_bar1.dart';
 import 'package:jp_cinema_app/screens/login_page.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
@@ -39,17 +40,7 @@ class _SignUpPageState extends State<SignUpPage> {
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
               child: Column(
                 children: [
-                  // logo
-                  Image.asset('assets/images/JP_cineplex.png', width: 100),
-                  const SizedBox(height: 90),
-
-                  // title
-                  Text(
-                    'Sign up now',
-                    textAlign: TextAlign.center,
-                    style: TextStyles.size20WeightBoldConthraxSemiBold,
-                  ),
-                  const SizedBox(height: 40),
+                  const JPAppBar1(title: "Sign up now"),
 
                   // Full name
                   _textField(
