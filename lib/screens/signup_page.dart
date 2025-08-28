@@ -23,8 +23,8 @@ class _SignUpPageState extends State<SignUpPage> {
 
   String? gender;
   bool agreeToTerms = false;
-  bool _hidePassword = true;
-  bool _hideConfirm = true;
+  final bool _hidePassword = true;
+  final bool _hideConfirm = true;
 
   @override
   Widget build(BuildContext context) {
