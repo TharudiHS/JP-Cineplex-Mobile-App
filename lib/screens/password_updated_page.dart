@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jp_cinema_app/components/custom_button.dart';
+import 'package:jp_cinema_app/components/main_button.dart';
 import 'package:jp_cinema_app/screens/login_page.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';

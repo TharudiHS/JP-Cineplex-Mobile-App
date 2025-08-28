@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jp_cinema_app/components/app_bar1.dart';
-import 'package:jp_cinema_app/components/custom_button.dart';
-import 'package:jp_cinema_app/components/text_form.dart';
+import 'package:jp_cinema_app/components/main_button.dart';
+import 'package:jp_cinema_app/components/text_form_field.dart';
 import 'package:jp_cinema_app/screens/password_updated_page.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';

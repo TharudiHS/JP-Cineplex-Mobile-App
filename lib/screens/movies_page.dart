@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:jp_cinema_app/components/app_bar2.dart';
 import 'package:jp_cinema_app/components/bottom_nav_bar.dart';
+import 'package:jp_cinema_app/data/models/movie_model.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
-import 'package:jp_cinema_app/viewmodels/movie_model.dart';
 
 class MoviesPage extends StatelessWidget {
   const MoviesPage({super.key});
