@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jp_cinema_app/components/app_bar2.dart';
+import 'package:jp_cinema_app/components/bottom_nav_bar.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
 import 'package:jp_cinema_app/viewmodels/movie_model.dart';
@@ -68,25 +69,7 @@ class MoviesPage extends StatelessWidget {
 
             const SizedBox(height: 30),
 
-            // Bottom Navigation
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 12),
-              color: AppColours.darkGrey,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  _pngNavItem("assets/images/home.png", "Home", context),
-                  _pngNavItem("assets/images/movies.png", "Movies", context),
-                  _pngNavItem("assets/images/book.png", "Book", context),
-                  _pngNavItem(
-                    "assets/images/food.png",
-                    "Food & Drink",
-                    context,
-                  ),
-                  _pngNavItem("assets/images/more.png", "More", context),
-                ],
-              ),
-            ),
+            const BottomNavBar(selectedIndex: 1),
           ],
         ),
       ),
@@ -169,31 +152,6 @@ class MoviesPage extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
       decoration: BoxDecoration(color: bg),
       child: Text(text, style: TextStyles.size10Promptwhite),
-    );
-  }
-
-  // Bottom Nav Item
-  static Widget _pngNavItem(
-    String iconPath,
-    String label,
-    BuildContext context,
-  ) {
-    return GestureDetector(
-      onTap: () {
-        if (label == "Home") {
-          Navigator.pushNamed(context, "/home");
-        } else if (label == "Movies") {
-          Navigator.pushNamed(context, "/movies");
-        }
-      },
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Image.asset(iconPath, height: 25, width: 25),
-          const SizedBox(height: 6),
-          Text(label, style: TextStyles.size11WeightBoldConthraxSemiBoldgold),
-        ],
-      ),
     );
   }
 }
