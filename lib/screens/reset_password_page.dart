@@ -53,7 +53,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                 const SizedBox(height: 30),
 
                 // RESET NOW button
-                CustomButton(
+                MainButton(
                   label: "RESET NOW",
                   onPressed: () {
                     final value = emailOrMobileController.text.trim();

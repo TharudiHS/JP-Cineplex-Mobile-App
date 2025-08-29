@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jp_cinema_app/components/app_bar3.dart';
 import 'package:jp_cinema_app/components/bottom_nav_bar.dart';
+import 'package:jp_cinema_app/screens/edit_profile_page.dart';
 import 'package:jp_cinema_app/utils/app_colours.dart';
 import 'package:jp_cinema_app/utils/text_styles.dart';
 
@@ -36,7 +37,10 @@ class SettingsPage extends StatelessWidget {
             const SizedBox(height: 16),
             GestureDetector(
               onTap: () {
-                // TODO: Add edit profile logic
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => EditProfilePage()),
+                );
               },
               child: Text(
                 "Edit Profile",

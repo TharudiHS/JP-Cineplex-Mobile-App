@@ -147,7 +147,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   const SizedBox(height: 14),
 
                   // SIGN UP button
-                  CustomButton(
+                  MainButton(
                     label: "SIGN UP",
                     onPressed: () {
                       Navigator.pushReplacement(

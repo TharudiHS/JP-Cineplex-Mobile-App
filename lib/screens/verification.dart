@@ -83,7 +83,7 @@ class _VerificationPageState extends State<VerificationPage> {
                 const SizedBox(height: 40),
 
                 // Verify Button
-                CustomButton(
+                MainButton(
                   label: "VERIFY",
                   onPressed: () {
                     String otp = _otpControllers.map((c) => c.text).join();

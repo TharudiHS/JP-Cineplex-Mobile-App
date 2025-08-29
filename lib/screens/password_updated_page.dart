@@ -57,7 +57,7 @@ class PasswordUpdatedPage extends StatelessWidget {
                 const SizedBox(height: 40),
 
                 // Back to Login Button using CustomButton
-                CustomButton(
+                MainButton(
                   label: "BACK TO LOGIN",
                   onPressed: () {
                     Navigator.pushReplacement(

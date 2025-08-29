@@ -80,7 +80,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height: 20),
 
                 // Login Button
-                CustomButton(
+                MainButton(
                   label: "LOGIN",
                   onPressed: () {
                     Navigator.push(

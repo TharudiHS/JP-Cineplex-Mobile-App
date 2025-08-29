@@ -74,7 +74,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                 const SizedBox(height: 40),
 
                 // Reset Now Button using CustomButton
-                CustomButton(
+                MainButton(
                   label: "RESET NOW",
                   onPressed: () {
                     String newPass = newPasswordController.text.trim();

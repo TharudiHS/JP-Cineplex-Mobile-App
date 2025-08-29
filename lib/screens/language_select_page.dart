@@ -57,7 +57,7 @@ class _LanguageSelectPageState extends State<LanguageSelectPage> {
                   const SizedBox(height: 110),
 
                   // Select button using CustomButton
-                  CustomButton(
+                  MainButton(
                     label: "SELECT",
                     width: 380,
                     onPressed: () {
