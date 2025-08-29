@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jp_cinema_app/components/app_bar2.dart';
 import 'package:jp_cinema_app/components/bottom_nav_bar.dart';
 import 'package:jp_cinema_app/data/models/movie_model.dart';
+import 'package:jp_cinema_app/screens/movie_inner.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
 
@@ -63,7 +64,17 @@ class MoviesPage extends StatelessWidget {
             // Movies List
             Column(
               children: movieList.map((movie) {
-                return _movieItem(movie.image, movie.title, movie.duration);
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => MovieInnerPage(movie: movie),
+                      ),
+                    );
+                  },
+                  child: _movieItem(movie.image, movie.title, movie.duration),
+                );
               }).toList(),
             ),
 
