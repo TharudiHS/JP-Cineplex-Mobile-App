@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jp_cinema_app/screens/more_page.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
 import '../screens/home_page.dart';
@@ -50,12 +51,14 @@ class BottomNavBar extends StatelessWidget {
             selectedIndex == 3,
             null,
           ),
-          _pngNavItem(
-            "assets/images/more.png",
-            "More",
-            selectedIndex == 4,
-            null,
-          ),
+          _pngNavItem("assets/images/more.png", "More", selectedIndex == 4, () {
+            if (selectedIndex != 4) {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (_) => const MorePage()),
+              );
+            }
+          }),
         ],
       ),
     );
