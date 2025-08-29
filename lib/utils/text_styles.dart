@@ -51,6 +51,11 @@ class TextStyles {
     fontSize: 12,
     color: AppColours.lightGrey,
   );
+  static const TextStyle size16PromptLight = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 16,
+    color: AppColours.lightGrey,
+  );
   static const TextStyle size16WeightBoldConthraxSemiBold = TextStyle(
     fontFamily: 'Conthrax',
     fontSize: 16,
