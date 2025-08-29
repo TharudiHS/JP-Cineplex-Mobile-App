@@ -27,10 +27,10 @@ final List<MovieModel> movieList = [
     image: "assets/images/madha_raja.jpg",
     title: "Madha Gaja Raja",
     duration: "2h 30m",
-    genres: "ACTION, SCI-FI, DRAMA | 2D, 3D, DOLBY ATMOS | U/A",
-    releaseDate: "Jan 24, 2025",
+    genres: "ACTION, SCI-FI, DRAMA | 2D, 3D, \nDOLBY ATMOS | U/A",
+    releaseDate: "January 24, 2025",
     synopsis:
-        "After receiving an unexpected call from her wayfinding ancestors, Moana must journey to the far seas of Oceania into dangerous, long-lost waters for an adventure unlike anything she has ever faced.",
+        "After receiving an unexpected call from her \nwayfinding ancestors, Moana must journey to the far \nseas of Oceania and into dangerous, long-lost waters \nfor an adventure unlike anything she's ever faced.",
     directors: ["Dana Ledoux Miller", "Jason Hand", "David Derrick Jr."],
     cast: [
       {"name": "Dwayne Johnson", "image": "assets/images/dwayne.jpg"},
@@ -45,10 +45,10 @@ final List<MovieModel> movieList = [
     image: "assets/images/Moana2.jpg",
     title: "Moana 2",
     duration: "2h 30m",
-    genres: "ACTION, SCI-FI, DRAMA | 2D, 3D, DOLBY ATMOS | U/A",
-    releaseDate: "Jan 24, 2025",
+    genres: "ACTION, SCI-FI, DRAMA | 2D, 3D, \nDOLBY ATMOS | U/A",
+    releaseDate: "January 24, 2025",
     synopsis:
-        "After receiving an unexpected call from her wayfinding ancestors, Moana must journey to the far seas of Oceania into dangerous, long-lost waters for an adventure unlike anything she has ever faced.",
+        "After receiving an unexpected call from her \nwayfinding ancestors, Moana must journey to the far \nseas of Oceania and into dangerous, long-lost waters \nfor an adventure unlike anything she's ever faced.",
     directors: ["Dana Ledoux Miller", "Jason Hand", "David Derrick Jr."],
     cast: [
       {"name": "Dwayne Johnson", "image": "assets/images/dwayne.jpg"},
@@ -63,10 +63,10 @@ final List<MovieModel> movieList = [
     image: "assets/images/game.jpg",
     title: "Game Changer",
     duration: "2h 30m",
-    genres: "ACTION, SCI-FI, DRAMA | 2D, 3D, DOLBY ATMOS | U/A",
-    releaseDate: "Jan 24, 2025",
+    genres: "ACTION, SCI-FI, DRAMA | 2D, 3D, \nDOLBY ATMOS | U/A",
+    releaseDate: "January 24, 2025",
     synopsis:
-        "After receiving an unexpected call from her wayfinding ancestors, Moana must journey to the far seas of Oceania into dangerous, long-lost waters for an adventure unlike anything she has ever faced.",
+        "After receiving an unexpected call from her \nwayfinding ancestors, Moana must journey to the far \nseas of Oceania and into dangerous, long-lost waters \nfor an adventure unlike anything she's ever faced.",
     directors: ["Dana Ledoux Miller", "Jason Hand", "David Derrick Jr."],
     cast: [
       {"name": "Dwayne Johnson", "image": "assets/images/dwayne.jpg"},
@@ -81,10 +81,10 @@ final List<MovieModel> movieList = [
     image: "assets/images/sonic3.jpeg",
     title: "The Hedgehog 3",
     duration: "2h 30m",
-    genres: "ACTION, SCI-FI, DRAMA | 2D, 3D, DOLBY ATMOS | U/A",
-    releaseDate: "Jan 24, 2025",
+    genres: "ACTION, SCI-FI, DRAMA | 2D, 3D, \nDOLBY ATMOS | U/A",
+    releaseDate: "January 24, 2025",
     synopsis:
-        "After receiving an unexpected call from her wayfinding ancestors, Moana must journey to the far seas of Oceania into dangerous, long-lost waters for an adventure unlike anything she has ever faced.",
+        "After receiving an unexpected call from her \nwayfinding ancestors, Moana must journey to the far \nseas of Oceania and into dangerous, long-lost waters \nfor an adventure unlike anything she's ever faced.",
     directors: ["Dana Ledoux Miller", "Jason Hand", "David Derrick Jr."],
     cast: [
       {"name": "Dwayne Johnson", "image": "assets/images/dwayne.jpg"},
@@ -99,10 +99,10 @@ final List<MovieModel> movieList = [
     image: "assets/images/denof.jpeg",
     title: "Den of Thieves 2 Pantera",
     duration: "2h 30m",
-    genres: "ACTION, SCI-FI, DRAMA | 2D, 3D, DOLBY ATMOS | U/A",
-    releaseDate: "Jan 24, 2025",
+    genres: "ACTION, SCI-FI, DRAMA | 2D, 3D, \nDOLBY ATMOS | U/A",
+    releaseDate: "January 24, 2025",
     synopsis:
-        "After receiving an unexpected call from her wayfinding ancestors, Moana must journey to the far seas of Oceania into dangerous, long-lost waters for an adventure unlike anything she has ever faced.",
+        "After receiving an unexpected call from her \nwayfinding ancestors, Moana must journey to the far \nseas of Oceania and into dangerous, long-lost waters \nfor an adventure unlike anything she's ever faced.",
     directors: ["Dana Ledoux Miller", "Jason Hand", "David Derrick Jr."],
     cast: [
       {"name": "Dwayne Johnson", "image": "assets/images/dwayne.jpg"},
