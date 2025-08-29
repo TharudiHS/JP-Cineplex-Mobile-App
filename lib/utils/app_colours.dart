@@ -28,4 +28,8 @@ class AppColours {
   static const grey30 = Color(0xFF303030);
   static const grey8F = Color(0xFF8F8F8F);
   static const goldBrown = Color(0xFFB4A159);
+  static const royalBlue = Color(0xFF0034C4);
+  static const crimsonRed = Color(0xFFE3000E);
+  static const bronze = Color(0xFFD2894B);
+  static const lavender = Color(0xFFDF81DF);
 }
