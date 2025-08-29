@@ -30,7 +30,6 @@ class MovieInnerPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ClipRRect(
-                        borderRadius: BorderRadius.circular(6),
                         child: Image.asset(
                           movie.image,
                           width: 120,
@@ -46,25 +45,22 @@ class MovieInnerPage extends StatelessWidget {
                             Text(
                               movie.title,
                               style:
-                                  TextStyles.size14WeightBoldConthraxSemiBold,
+                                  TextStyles.size18WeightBoldConthraxSemiBold,
                             ),
                             const SizedBox(height: 6),
                             Text(
                               movie.genres,
-                              style:
-                                  TextStyles.size14WeightBoldConthraxSemiBold,
+                              style: TextStyles.size12Promptwhitegold,
                             ),
                             const SizedBox(height: 6),
                             Text(
                               movie.duration,
-                              style:
-                                  TextStyles.size14WeightBoldConthraxSemiBold,
+                              style: TextStyles.size12Promptwhite,
                             ),
                             const SizedBox(height: 6),
                             Text(
                               "Release: ${movie.releaseDate}",
-                              style:
-                                  TextStyles.size14WeightBoldConthraxSemiBold,
+                              style: TextStyles.size12Promptwhitegrey8F,
                             ),
                             const SizedBox(height: 8),
 
@@ -78,8 +74,7 @@ class MovieInnerPage extends StatelessWidget {
                                 const SizedBox(width: 6),
                                 Text(
                                   "Play Trailer",
-                                  style: TextStyles
-                                      .size14WeightBoldConthraxSemiBold,
+                                  style: TextStyles.size12Promptwhitegold,
                                 ),
                               ],
                             ),
@@ -95,29 +90,29 @@ class MovieInnerPage extends StatelessWidget {
                   // Synopsis + Director + Cast
                   Text(
                     "Synopsis",
-                    style: TextStyles.size14WeightBoldConthraxSemiBold,
+                    style: TextStyles.size16WeightBoldConthraxSemiBold,
                   ),
                   const SizedBox(height: 6),
                   Text(
                     movie.synopsis,
-                    style: TextStyles.size14WeightBoldConthraxSemiBold,
+                    style: TextStyles.size14PromptLightwhite,
                   ),
                   const SizedBox(height: 12),
 
                   Text(
                     "Director",
-                    style: TextStyles.size14WeightBoldConthraxSemiBold,
+                    style: TextStyles.size16WeightBoldConthraxSemiBold,
                   ),
                   const SizedBox(height: 4),
                   Text(
                     movie.directors.join(", "),
-                    style: TextStyles.size14WeightBoldConthraxSemiBold,
+                    style: TextStyles.size15Promptwhite,
                   ),
                   const SizedBox(height: 12),
 
                   Text(
                     "Cast",
-                    style: TextStyles.size14WeightBoldConthraxSemiBold,
+                    style: TextStyles.size16WeightBoldConthraxSemiBold,
                   ),
                   const SizedBox(height: 8),
                   SizedBox(
@@ -138,8 +133,7 @@ class MovieInnerPage extends StatelessWidget {
                             const SizedBox(height: 6),
                             Text(
                               movie.cast[i]["name"] ?? "",
-                              style:
-                                  TextStyles.size14WeightBoldConthraxSemiBold,
+                              style: TextStyles.size12Promptwhite,
                               overflow: TextOverflow.ellipsis,
                             ),
                           ],
@@ -151,7 +145,7 @@ class MovieInnerPage extends StatelessWidget {
                   const SizedBox(height: 20),
                   Text(
                     "Showtimes",
-                    style: TextStyles.size14WeightBoldConthraxSemiBold,
+                    style: TextStyles.size18WeightBoldConthraxSemiBold,
                   ),
                   const SizedBox(height: 12),
 
