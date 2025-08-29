@@ -101,6 +101,11 @@ class TextStyles {
     fontSize: 12,
     color: AppColours.gold,
   );
+  static const TextStyle size24Promptwhitegold = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 24,
+    color: AppColours.gold,
+  );
   static const TextStyle size12Promptwhitegrey8F = TextStyle(
     fontFamily: 'Prompt',
     fontSize: 12,
