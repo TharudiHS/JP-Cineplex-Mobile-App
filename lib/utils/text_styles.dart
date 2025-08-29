@@ -13,6 +13,11 @@ class TextStyles {
     fontSize: 14,
     color: AppColours.lightGrey,
   );
+  static const TextStyle size14PromptLightwhite = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 14,
+    color: AppColours.white,
+  );
   static const TextStyle size20WeightBoldConthraxSemiBold = TextStyle(
     fontFamily: 'Conthrax',
     fontSize: 20,
@@ -90,5 +95,15 @@ class TextStyles {
     fontFamily: 'Prompt',
     fontSize: 12,
     color: AppColours.white,
+  );
+  static const TextStyle size12Promptwhitegold = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 12,
+    color: AppColours.gold,
+  );
+  static const TextStyle size12Promptwhitegrey8F = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 12,
+    color: AppColours.grey8F,
   );
 }
