@@ -11,6 +11,7 @@ class CustomTextFormField extends StatelessWidget {
   final TextInputType keyboardType;
   final Widget? suffixIcon;
   final Color backgroundColor;
+  final TextStyle? textStyle;
 
   const CustomTextFormField({
     super.key,
@@ -21,6 +22,7 @@ class CustomTextFormField extends StatelessWidget {
     this.keyboardType = TextInputType.text,
     this.suffixIcon,
     this.backgroundColor = AppColours.darkGrey,
+    this.textStyle,
   });
 
   @override
