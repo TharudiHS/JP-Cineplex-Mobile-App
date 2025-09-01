@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jp_cineplex_movie/components/app_bar2.dart';
-import 'package:jp_cineplex_movie/utils/app_colours.dart';
-import 'package:jp_cineplex_movie/utils/text_styles.dart';
+import 'package:jp_cinema_app/components/app_bar2.dart';
+import '../utils/app_colours.dart';
+import '../utils/text_styles.dart';
 
 class MovieBookPage extends StatelessWidget {
   const MovieBookPage({super.key});
