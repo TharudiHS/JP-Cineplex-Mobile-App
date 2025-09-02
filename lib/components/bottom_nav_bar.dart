@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jp_cinema_app/screens/foods.dart';
 import 'package:jp_cinema_app/screens/more_page.dart';
 import 'package:jp_cinema_app/screens/movie_bookpage.dart';
 import '../utils/app_colours.dart';
@@ -52,7 +53,14 @@ class BottomNavBar extends StatelessWidget {
             "assets/images/food.png",
             "Food & Drink",
             selectedIndex == 3,
-            null,
+            () {
+              if (selectedIndex != 3) {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (_) => const FoodsPage()),
+                );
+              }
+            },
           ),
           _pngNavItem("assets/images/more.png", "More", selectedIndex == 4, () {
             if (selectedIndex != 4) {
