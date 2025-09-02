@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jp_cinema_app/components/app_bar2.dart';
+import 'package:jp_cinema_app/components/bottom_nav_bar.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
 
@@ -10,6 +11,7 @@ class MovieBookPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColours.black,
+      bottomNavigationBar: const BottomNavBar(selectedIndex: 2),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -20,6 +22,25 @@ class MovieBookPage extends StatelessWidget {
             // Date Tabs
             _dateTabs(),
             const SizedBox(height: 12),
+
+            //Cinema feature row
+            const CinemaFeaturesRow(),
+            const SizedBox(height: 20),
+
+            // Search bar
+            Container(
+              margin: const EdgeInsets.all(12),
+              decoration: BoxDecoration(color: AppColours.grey11),
+              child: const TextField(
+                style: TextStyle(color: Colors.white),
+                decoration: InputDecoration(
+                  hintText: "Search",
+                  hintStyle: TextStyle(color: AppColours.greyC2),
+                  border: InputBorder.none,
+                  prefixIcon: Icon(Icons.search, color: Colors.white),
+                ),
+              ),
+            ),
 
             // Movies list
             Column(
@@ -128,7 +149,7 @@ class MovieBookPage extends StatelessWidget {
     );
   }
 
-  // ---------------- Date Tabs -----------------
+  //   Date Tabs
   Widget _dateTabs() {
     return Row(
       children: [
@@ -175,7 +196,7 @@ class MovieBookPage extends StatelessWidget {
     );
   }
 
-  // ---------------- Showtime Card -----------------
+  //  Showtime Card
   Widget _showtimeCard(
     String screen,
     String time, {
@@ -257,7 +278,7 @@ class MovieBookPage extends StatelessWidget {
     );
   }
 
-  // ---------------- Movie Card -----------------
+  //  Movie Card
   Widget _buildMovieCard(
     BuildContext context, {
     required String imagePath,
@@ -267,35 +288,119 @@ class MovieBookPage extends StatelessWidget {
   }) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: AppColours.darkGrey,
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Stack(
         children: [
-          // Poster
+          // Background image
           ClipRRect(
             child: Image.asset(
-              imagePath,
-              height: 220,
-              width: 120,
+              "assets/images/showtime-box-bg.png",
+              width: double.infinity,
+              height: 720,
               fit: BoxFit.cover,
             ),
           ),
-          const SizedBox(height: 10),
 
-          // Title
-          Text(title, style: TextStyles.size14PromptLightwhite),
-          const SizedBox(height: 4),
+          // Foreground content
+          Padding(
+            padding: const EdgeInsets.all(12),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Poster
+                Center(
+                  child: ClipRRect(
+                    child: Image.asset(
+                      imagePath,
+                      height: 310,
+                      width: 220,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
 
-          // Location
-          Text(location, style: TextStyles.size14PromptLightwhite),
-          const SizedBox(height: 12),
+                const SizedBox(height: 20),
 
-          // Showtime cards
-          Column(children: showtimeWidgets),
+                // Title
+                Center(
+                  child: Text(
+                    title,
+                    style: TextStyles.size24WeightBoldConthraxSemiBold,
+                  ),
+                ),
+
+                const SizedBox(height: 10),
+
+                // Location
+                Center(
+                  child: Text(
+                    location,
+                    style: TextStyles.size14WeightBoldConthraxSemiBold,
+                  ),
+                ),
+
+                const SizedBox(height: 12),
+
+                // Showtime cards
+                Column(children: showtimeWidgets),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+//  Cinema Features Row
+class CinemaFeaturesRow extends StatelessWidget {
+  const CinemaFeaturesRow({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      child: Row(
+        children: [
+          _buildFeature("assets/images/gold.png", "GOLD CLASS"),
+          _buildFeature("assets/images/dolby.png", "DOLBY ATMOS 7.1"),
+          _buildFeature("assets/images/3d.png", "3D CINEMA"),
+          _buildFeature("assets/images/4dx.png", "4Dx CINEMA"),
+          _buildFeature("assets/images/IR.png", "INFRA-RED HEARING"),
+          _buildFeature("assets/images/cc.png", "CLOSED CAPTION"),
+          _buildMoreButton(),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildFeature(String imagePath, String label) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset(imagePath, height: 24, fit: BoxFit.contain),
+          const SizedBox(height: 6),
+          Text(
+            label,
+            style: TextStyles.size3Promptwhite,
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildMoreButton() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: const [
+          Icon(Icons.arrow_forward_ios, color: Colors.white, size: 22),
+          SizedBox(height: 6),
+          Text("MORE", style: TextStyles.size10Promptwhite),
         ],
       ),
     );
