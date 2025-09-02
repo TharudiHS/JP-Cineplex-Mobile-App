@@ -31,7 +31,7 @@ class FoodsPage extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  mainAxisExtent: 260, // control card height
+                  mainAxisExtent: 290,
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 12,
                 ),
@@ -42,6 +42,7 @@ class FoodsPage extends StatelessWidget {
                     item['image']!,
                     item['title']!,
                     item['price']!,
+                    isFavorite: index % 2 == 0,
                   );
                 },
               ),
@@ -107,7 +108,12 @@ class FoodsPage extends StatelessWidget {
   }
 
   // Food Item Card
-  Widget _foodCard(String image, String title, String price) {
+  Widget _foodCard(
+    String image,
+    String title,
+    String price, {
+    bool isFavorite = false,
+  }) {
     return Container(
       decoration: BoxDecoration(
         color: const Color(0xFF1C1C1C),
@@ -123,7 +129,7 @@ class FoodsPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Image with "Seasonal Favorite"
+          // Image
           Stack(
             children: [
               ClipRRect(
@@ -132,31 +138,9 @@ class FoodsPage extends StatelessWidget {
                 ),
                 child: Image.asset(
                   image,
-                  height: 130,
+                  height: 150,
                   width: double.infinity,
                   fit: BoxFit.cover,
-                ),
-              ),
-              Positioned(
-                top: 6,
-                right: 6,
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 8,
-                    vertical: 4,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.red,
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: const Text(
-                    "Seasonal Favorite",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 10,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
                 ),
               ),
             ],
@@ -168,9 +152,7 @@ class FoodsPage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 8),
             child: Text(
               title,
-              style: TextStyles.size14WeightBoldConthraxSemiBold.copyWith(
-                color: Colors.white,
-              ),
+              style: TextStyles.size12Promptwhite,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
             ),
@@ -180,14 +162,7 @@ class FoodsPage extends StatelessWidget {
           // Price
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: Text(
-              price,
-              style: const TextStyle(
-                color: Colors.yellow,
-                fontSize: 13,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            child: Text(price, style: TextStyles.size14PromptLightgold),
           ),
           const Spacer(),
 
@@ -198,16 +173,11 @@ class FoodsPage extends StatelessWidget {
               alignment: Alignment.center,
               padding: const EdgeInsets.symmetric(vertical: 10),
               decoration: BoxDecoration(
-                border: Border.all(color: AppColours.gold, width: 1.2),
-                borderRadius: BorderRadius.circular(4),
+                border: Border.all(color: AppColours.grey5E, width: 2.5),
               ),
               child: Text(
                 "ORDER NOW",
-                style: TextStyle(
-                  color: AppColours.gold,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 13,
-                ),
+                style: TextStyles.size12WeightBoldConthraxSemiBoldgold,
               ),
             ),
           ),
@@ -217,36 +187,36 @@ class FoodsPage extends StatelessWidget {
   }
 }
 
-// Sample food list
+// food list
 final List<Map<String, String>> foodItems = [
   {
     "image": "assets/images/food1.png",
-    "title": "Chocolate Caramel Popcorn Delight",
+    "title": "Chocolate Caramel \nPopcorn Delight",
     "price": "LKR 1,200.00",
   },
   {
     "image": "assets/images/food2.png",
-    "title": "Chocolate Caramel Popcorn Delight",
+    "title": "Chocolate Caramel \nPopcorn Delight",
     "price": "LKR 1,200.00",
   },
   {
     "image": "assets/images/food3.png",
-    "title": "Chocolate Caramel Popcorn Delight",
+    "title": "Chocolate Caramel \nPopcorn Delight",
     "price": "LKR 1,200.00",
   },
   {
     "image": "assets/images/food4.png",
-    "title": "Chocolate Caramel Popcorn Delight",
+    "title": "Chocolate Caramel \nPopcorn Delight",
     "price": "LKR 1,200.00",
   },
   {
     "image": "assets/images/food5.png",
-    "title": "Chocolate Caramel Popcorn Delight",
+    "title": "Chocolate Caramel \nPopcorn Delight",
     "price": "LKR 1,200.00",
   },
   {
     "image": "assets/images/food6.png",
-    "title": "Chocolate Caramel Popcorn Delight",
+    "title": "Chocolate Caramel \nPopcorn Delight",
     "price": "LKR 1,200.00",
   },
 ];
