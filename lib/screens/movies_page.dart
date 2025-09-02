@@ -13,6 +13,7 @@ class MoviesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColours.black,
+      bottomNavigationBar: const BottomNavBar(selectedIndex: 1),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -77,10 +78,6 @@ class MoviesPage extends StatelessWidget {
                 );
               }).toList(),
             ),
-
-            const SizedBox(height: 30),
-
-            const BottomNavBar(selectedIndex: 1),
           ],
         ),
       ),
