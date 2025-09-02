@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jp_cinema_app/screens/more_page.dart';
+import 'package:jp_cinema_app/screens/movie_bookpage.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
 import '../screens/home_page.dart';
@@ -39,12 +40,14 @@ class BottomNavBar extends StatelessWidget {
               }
             },
           ),
-          _pngNavItem(
-            "assets/images/book.png",
-            "Book",
-            selectedIndex == 2,
-            null,
-          ),
+          _pngNavItem("assets/images/book.png", "Book", selectedIndex == 2, () {
+            if (selectedIndex != 2) {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (_) => const MovieBookPage()),
+              );
+            }
+          }),
           _pngNavItem(
             "assets/images/food.png",
             "Food & Drink",
