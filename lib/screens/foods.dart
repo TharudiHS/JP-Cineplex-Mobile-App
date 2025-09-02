@@ -116,8 +116,11 @@ class FoodsPage extends StatelessWidget {
   }) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF1C1C1C),
-        borderRadius: BorderRadius.circular(8),
+        image: const DecorationImage(
+          image: AssetImage("assets/images/showtime-box-bg.png"),
+          fit: BoxFit.cover,
+        ),
+
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.4),
@@ -129,13 +132,10 @@ class FoodsPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Image
+          // Food Image with Badge
           Stack(
             children: [
               ClipRRect(
-                borderRadius: const BorderRadius.vertical(
-                  top: Radius.circular(8),
-                ),
                 child: Image.asset(
                   image,
                   height: 150,
@@ -145,6 +145,7 @@ class FoodsPage extends StatelessWidget {
               ),
             ],
           ),
+
           const SizedBox(height: 8),
 
           // Title
@@ -164,6 +165,7 @@ class FoodsPage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 8),
             child: Text(price, style: TextStyles.size14PromptLightgold),
           ),
+
           const Spacer(),
 
           // Order Button
@@ -173,7 +175,7 @@ class FoodsPage extends StatelessWidget {
               alignment: Alignment.center,
               padding: const EdgeInsets.symmetric(vertical: 10),
               decoration: BoxDecoration(
-                border: Border.all(color: AppColours.grey5E, width: 2.5),
+                border: Border.all(color: AppColours.grey5E, width: 1.8),
               ),
               child: Text(
                 "ORDER NOW",
