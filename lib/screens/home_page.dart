@@ -11,6 +11,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColours.black,
+      bottomNavigationBar: const BottomNavBar(selectedIndex: 0),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -234,9 +235,6 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-
-            // Bottom Navigation
-            const BottomNavBar(selectedIndex: 0),
           ],
         ),
       ),
