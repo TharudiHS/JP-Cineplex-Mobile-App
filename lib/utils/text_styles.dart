@@ -94,7 +94,6 @@ class TextStyles {
   static const TextStyle size8ConthraxSemiBold = TextStyle(
     fontFamily: 'Conthrax',
     fontSize: 8,
-    color: AppColours.crimsonRed,
   );
   static const TextStyle size11WeightBoldConthraxSemiBoldgold = TextStyle(
     fontFamily: 'Conthrax',
