@@ -1,6 +1,7 @@
-// lib/screens/movie_inner.dart
 import 'package:flutter/material.dart';
 import 'package:jp_cinema_app/data/models/showtime_card.dart';
+import 'package:jp_cinema_app/screens/screen1.dart';
+import 'package:jp_cinema_app/screens/screen2.dart';
 import '../components/app_bar2.dart';
 import '../components/bottom_nav_bar.dart';
 import '../data/models/movie_model.dart';
@@ -196,24 +197,28 @@ class MovieInnerPage extends StatelessWidget {
                     time: "10:30 AM",
                     stripColor: AppColours.royalBlue,
                     textColor: AppColours.royalBlue,
+                    destinationPage: const Screen1Page(),
                   ),
                   ShowtimeCard(
                     screen: "Screen 2",
                     time: "10:30 AM",
                     stripColor: AppColours.crimsonRed,
                     textColor: AppColours.crimsonRed,
+                    destinationPage: const Screen2Page(),
                   ),
                   ShowtimeCard(
                     screen: "Screen 3 - Luxe",
                     time: "10:30 AM",
                     stripColor: AppColours.bronze,
                     textColor: AppColours.bronze,
+                    destinationPage: const Screen2Page(),
                   ),
                   ShowtimeCard(
                     screen: "Screen 4",
                     time: "10:30 AM",
                     stripColor: AppColours.lavender,
                     textColor: AppColours.lavender,
+                    destinationPage: const Screen2Page(),
                   ),
                 ],
               ),

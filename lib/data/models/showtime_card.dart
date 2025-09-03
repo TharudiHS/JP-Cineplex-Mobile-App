@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:jp_cinema_app/screens/screen1.dart';
 import 'package:jp_cinema_app/utils/app_colours.dart';
 import 'package:jp_cinema_app/utils/text_styles.dart';
 
@@ -8,6 +7,7 @@ class ShowtimeCard extends StatelessWidget {
   final String time;
   final Color stripColor;
   final Color textColor;
+  final Widget destinationPage;
 
   const ShowtimeCard({
     super.key,
@@ -15,6 +15,7 @@ class ShowtimeCard extends StatelessWidget {
     required this.time,
     required this.stripColor,
     required this.textColor,
+    required this.destinationPage,
   });
 
   @override
@@ -23,7 +24,7 @@ class ShowtimeCard extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const Screen1Page()),
+          MaterialPageRoute(builder: (context) => destinationPage),
         );
       },
       child: Stack(

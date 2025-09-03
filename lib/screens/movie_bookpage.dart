@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:jp_cinema_app/components/app_bar2.dart';
 import 'package:jp_cinema_app/components/bottom_nav_bar.dart';
 import 'package:jp_cinema_app/data/models/showtime_card.dart';
+import 'package:jp_cinema_app/screens/screen1.dart';
+import 'package:jp_cinema_app/screens/screen2.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
 
@@ -60,24 +62,28 @@ class MovieBookPage extends StatelessWidget {
                       time: "10:30 AM",
                       stripColor: AppColours.royalBlue,
                       textColor: AppColours.royalBlue,
+                      destinationPage: const Screen1Page(),
                     ),
                     ShowtimeCard(
                       screen: "Screen 2",
                       time: "10:30 AM",
                       stripColor: AppColours.crimsonRed,
                       textColor: AppColours.crimsonRed,
+                      destinationPage: const Screen2Page(),
                     ),
                     ShowtimeCard(
                       screen: "Screen 3 - Luxe",
                       time: "10:30 AM",
                       stripColor: AppColours.bronze,
                       textColor: AppColours.bronze,
+                      destinationPage: const Screen2Page(),
                     ),
                     ShowtimeCard(
                       screen: "Screen 4",
                       time: "10:30 AM",
                       stripColor: AppColours.lavender,
                       textColor: AppColours.lavender,
+                      destinationPage: const Screen2Page(),
                     ),
                   ],
                 ),
@@ -92,24 +98,28 @@ class MovieBookPage extends StatelessWidget {
                       time: "10:30 AM",
                       stripColor: AppColours.royalBlue,
                       textColor: AppColours.royalBlue,
+                      destinationPage: const Screen1Page(),
                     ),
                     ShowtimeCard(
                       screen: "Screen 2",
                       time: "10:30 AM",
                       stripColor: AppColours.crimsonRed,
                       textColor: AppColours.crimsonRed,
+                      destinationPage: const Screen2Page(),
                     ),
                     ShowtimeCard(
                       screen: "Screen 3 - Luxe",
                       time: "10:30 AM",
                       stripColor: AppColours.bronze,
                       textColor: AppColours.bronze,
+                      destinationPage: const Screen2Page(),
                     ),
                     ShowtimeCard(
                       screen: "Screen 4",
                       time: "10:30 AM",
                       stripColor: AppColours.lavender,
                       textColor: AppColours.lavender,
+                      destinationPage: const Screen2Page(),
                     ),
                   ],
                 ),
@@ -124,24 +134,28 @@ class MovieBookPage extends StatelessWidget {
                       time: "10:30 AM",
                       stripColor: AppColours.royalBlue,
                       textColor: AppColours.royalBlue,
+                      destinationPage: const Screen1Page(),
                     ),
                     ShowtimeCard(
                       screen: "Screen 2",
                       time: "10:30 AM",
                       stripColor: AppColours.crimsonRed,
                       textColor: AppColours.crimsonRed,
+                      destinationPage: const Screen2Page(),
                     ),
                     ShowtimeCard(
                       screen: "Screen 3 - Luxe",
                       time: "10:30 AM",
                       stripColor: AppColours.bronze,
                       textColor: AppColours.bronze,
+                      destinationPage: const Screen2Page(),
                     ),
                     ShowtimeCard(
                       screen: "Screen 4",
                       time: "10:30 AM",
                       stripColor: AppColours.lavender,
                       textColor: AppColours.lavender,
+                      destinationPage: const Screen2Page(),
                     ),
                   ],
                 ),

@@ -136,7 +136,29 @@ class _Screen1State extends State<Screen1Page> {
                   Expanded(
                     child: Align(
                       alignment: Alignment.topRight,
-                      child: legendBox(Colors.green, "Selected Seat(s)"),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                            width: 18,
+                            height: 18,
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.circular(4),
+                            ),
+                            child: const Icon(
+                              Icons.check,
+                              color: Colors.white,
+                              size: 14,
+                            ),
+                          ),
+                          const SizedBox(width: 6),
+                          Text(
+                            "Selected Seat(s)",
+                            style: TextStyles.size12Promptwhite,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
