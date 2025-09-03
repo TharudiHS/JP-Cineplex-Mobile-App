@@ -10,20 +10,23 @@ class Screen2Page extends StatefulWidget {
   const Screen2Page({super.key});
 
   @override
-  State<Screen2Page> createState() => _Screen1State();
+  State<Screen2Page> createState() => _Screen2PageState();
 }
 
-class _Screen1State extends State<Screen2Page> {
-  final int rows = 10;
-  final int cols = 8;
+class _Screen2PageState extends State<Screen2Page> {
+  final int rows = 10; // A..J
+  final int cols = 10;
 
-  // occupied seats
-  final List<String> occupiedSeats = ['H3', 'H4', 'E5', 'E6', 'E7'];
-  final List<String> selectedSeats = ['C4', 'C5'];
+  final List<String> occupiedSeats = ["H3", "H4", "E6", "E7", "C2", "D2", "D3"];
+  final List<String> familySeats = ["A2", "A4", "A6", "A8"];
 
-  String seatCode(int row, int col) {
-    String rowLabel = String.fromCharCode(65 + row); // A-J
-    return '$rowLabel${col + 1}';
+  // user selected seats
+  final List<String> selectedSeats = [];
+
+  String seatCodeForGrid(int gridRow, int col) {
+    final int letterIndex = (rows - 1) - gridRow;
+    final String letter = String.fromCharCode(65 + letterIndex);
+    return "$letter${col + 1}";
   }
 
   @override
@@ -32,7 +35,6 @@ class _Screen1State extends State<Screen2Page> {
       bottomNavigationBar: const BottomNavBar(selectedIndex: 2),
       backgroundColor: AppColours.black,
       appBar: buildAppBar3(context, "Booking"),
-
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -81,15 +83,12 @@ class _Screen1State extends State<Screen2Page> {
                           const SizedBox(height: 4),
                           Row(
                             children: [
-                              // Vertical bar
                               Container(
                                 width: 4,
                                 height: 10,
                                 color: AppColours.crimsonRed,
                               ),
                               const SizedBox(width: 5),
-
-                              // Text
                               Text(
                                 "Gold - A Touch of Classic Elegance",
                                 style: TextStyles.size8ConthraxSemiBold
@@ -107,7 +106,7 @@ class _Screen1State extends State<Screen2Page> {
 
             const SizedBox(height: 30),
 
-            // Legend Section
+            // Legend
             Text(
               "Select Your Seats",
               style: TextStyles.size16WeightBoldConthraxSemiBold,
@@ -116,7 +115,6 @@ class _Screen1State extends State<Screen2Page> {
             Divider(color: AppColours.lightGrey.withOpacity(0.6)),
             const SizedBox(height: 20),
 
-            // inside your build()
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
@@ -132,7 +130,6 @@ class _Screen1State extends State<Screen2Page> {
                       ],
                     ),
                   ),
-
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -162,7 +159,7 @@ class _Screen1State extends State<Screen2Page> {
                         ),
                         const SizedBox(height: 30),
 
-                        //Family/Couple Seats
+                        // Family/Couple Seats
                         Row(
                           children: [
                             Container(
@@ -196,7 +193,7 @@ class _Screen1State extends State<Screen2Page> {
             Divider(color: AppColours.lightGrey.withOpacity(0.6)),
             const SizedBox(height: 20),
 
-            // search icon
+            // Search icon
             Padding(
               padding: const EdgeInsets.only(right: 12, bottom: 4),
               child: Align(
@@ -215,82 +212,85 @@ class _Screen1State extends State<Screen2Page> {
               "SCREEN",
               style: TextStyles.size14WeightBoldConthraxSemiBold,
             ),
-
             const SizedBox(height: 20),
 
-            // Seat Grid
-            SizedBox(
-              height: 400,
-              child: GridView.builder(
+            //  SEAT GRID
+            GridView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 6),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: cols,
+                crossAxisSpacing: 6,
+                mainAxisSpacing: 6,
+                childAspectRatio: 1.0,
+              ),
+              itemCount: (rows - 1) * cols,
+              itemBuilder: (context, index) {
+                final int gridRow = index ~/ cols;
+                final int col = index % cols;
+                final String code = seatCodeForGrid(gridRow, col);
+
+                final bool isOccupied = occupiedSeats.contains(code);
+                final bool isSelected = selectedSeats.contains(code);
+
+                return GestureDetector(
+                  onTap: () {
+                    if (!isOccupied) {
+                      setState(() {
+                        if (isSelected) {
+                          selectedSeats.remove(code);
+                        } else {
+                          selectedSeats.add(code);
+                        }
+                      });
+                    }
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: isOccupied
+                          ? AppColours.red
+                          : isSelected
+                          ? Colors.green
+                          : AppColours.lightGrey,
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                    child: Center(
+                      child: isSelected
+                          ? const Icon(
+                              Icons.check,
+                              size: 16,
+                              color: Colors.white,
+                            )
+                          : null,
+                    ),
+                  ),
+                );
+              },
+            ),
+            const SizedBox(height: 15),
+
+            //  FAMILY / COUPLE SEATS ROW
+            Transform.translate(
+              offset: const Offset(0, -8),
+              child: Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 30,
-                  vertical: 10,
+                  vertical: 6,
                 ),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: cols,
-                  crossAxisSpacing: 6,
-                  mainAxisSpacing: 6,
-                ),
-                itemCount: rows * cols,
-                itemBuilder: (context, index) {
-                  int row = index ~/ cols;
-                  int col = index % cols;
-                  String code = seatCode(row, col);
-
-                  bool isOccupied = occupiedSeats.contains(code); // red squares
-                  bool isSelected = selectedSeats.contains(
-                    code,
-                  ); // green check marks
-                  bool isFamilySeat = false; // unused in your image
-
-                  return GestureDetector(
-                    onTap: () {
-                      if (!isOccupied && !isFamilySeat) {
-                        setState(() {
-                          if (isSelected) {
-                            selectedSeats.remove(code);
-                          } else {
-                            selectedSeats.add(code);
-                          }
-                        });
-                      }
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: isOccupied
-                            ? Colors.red
-                            : isSelected
-                            ? Colors.green
-                            : Colors.grey[300], // neutral gray
-                        borderRadius: BorderRadius.circular(6),
-                      ),
-                      child: Center(
-                        child: isSelected
-                            ? const Icon(
-                                Icons.check,
-                                size: 16,
-                                color: Colors.white,
-                              )
-                            : null,
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
-            const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(
-                5,
-                (index) => const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 4),
-                  child: Icon(Icons.favorite, color: Colors.red, size: 24),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: familySeats.map((code) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 6),
+                      child: _familySeatTile(code),
+                    );
+                  }).toList(),
                 ),
               ),
             ),
 
-            // Select Seats Button
+            //  SELECT SEATS BUTTON
             Padding(
               padding: const EdgeInsets.all(12),
               child: MainButton(
@@ -309,12 +309,14 @@ class _Screen1State extends State<Screen2Page> {
                 backgroundColor: AppColours.gold,
               ),
             ),
+            const SizedBox(height: 18),
           ],
         ),
       ),
     );
   }
 
+  // Legend helper
   Widget legendBox(Color color, String text) {
     return Row(
       mainAxisSize: MainAxisSize.min,
@@ -332,9 +334,24 @@ class _Screen1State extends State<Screen2Page> {
       ],
     );
   }
+
+  Widget _familySeatTile(String code) {
+    return Container(
+      width: 52,
+      height: 30,
+      decoration: BoxDecoration(
+        color: AppColours.lightGrey,
+        borderRadius: BorderRadius.circular(6),
+        border: Border.all(color: Colors.black.withOpacity(0.18), width: 1),
+      ),
+      child: const Center(
+        child: Icon(Icons.favorite_border, size: 18, color: Colors.black87),
+      ),
+    );
+  }
 }
 
-// Golden curve painter
+// Golden curve painter (unchanged)
 class CurvePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
