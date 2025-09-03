@@ -12,11 +12,14 @@ class FoodsPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColours.black,
       bottomNavigationBar: const BottomNavBar(selectedIndex: 3),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(120),
+        child: JPAppBar2(title: "Food & Drink"),
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const JPAppBar2(title: "Food & Drink"),
             const SizedBox(height: 30),
 
             // Category Tabs
