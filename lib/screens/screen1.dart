@@ -19,12 +19,14 @@ class _Screen1State extends State<Screen1Page> {
 
   // occupied seats
   final List<String> occupiedSeats = ["H3", "H4", "E6", "E7", "C2", "D2", "D3"];
+  final List<String> familySeats = ["A2", "A4", "A6", "A8"];
 
   List<String> selectedSeats = [];
 
-  String seatCode(int row, int col) {
-    String rowLetter = String.fromCharCode(65 + row);
-    return "$rowLetter${col + 1}";
+  String seatCodeForGrid(int gridRow, int col) {
+    final int letterIndex = (rows - 1) - gridRow;
+    final String letter = String.fromCharCode(65 + letterIndex);
+    return "$letter${col + 1}";
   }
 
   @override
@@ -192,57 +194,101 @@ class _Screen1State extends State<Screen1Page> {
             const SizedBox(height: 20),
 
             // Seat Grid
-            SizedBox(
-              height: 400,
-              child: GridView.builder(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 30,
-                  vertical: 10,
-                ),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: cols,
-                  crossAxisSpacing: 6,
-                  mainAxisSpacing: 6,
-                ),
-                itemCount: rows * cols,
-                itemBuilder: (context, index) {
-                  int row = index ~/ cols;
-                  int col = index % cols;
-                  String code = seatCode(row, col);
+            Column(
+              children: List.generate(rows, (row) {
+                int letterIndex = (rows - 1) - row;
+                String rowLetter = String.fromCharCode(65 + letterIndex);
 
-                  bool isOccupied = occupiedSeats.contains(code);
-                  bool isSelected = selectedSeats.contains(code);
-
-                  Color seatColor;
-                  if (isOccupied) {
-                    seatColor = AppColours.red;
-                  } else if (isSelected) {
-                    seatColor = Colors.green;
-                  } else {
-                    seatColor = AppColours.white;
-                  }
-
-                  return GestureDetector(
-                    onTap: () {
-                      if (!isOccupied) {
-                        setState(() {
-                          if (isSelected) {
-                            selectedSeats.remove(code);
-                          } else {
-                            selectedSeats.add(code);
-                          }
-                        });
-                      }
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: seatColor,
-                        borderRadius: BorderRadius.circular(6),
+                return Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 4,
+                    horizontal: 30,
+                  ),
+                  child: Row(
+                    children: [
+                      // Row label (letter)
+                      SizedBox(
+                        width: 20,
+                        child: Text(
+                          rowLetter,
+                          style: TextStyles.size12Promptwhite,
+                          textAlign: TextAlign.center,
+                        ),
                       ),
-                    ),
-                  );
-                },
-              ),
+                      const SizedBox(width: 8),
+
+                      // Seat row
+                      Expanded(
+                        child: GridView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 10,
+                                crossAxisSpacing: 6,
+                                mainAxisSpacing: 6,
+                                childAspectRatio: 1.0,
+                              ),
+                          itemCount: 10,
+                          itemBuilder: (context, col) {
+                            // Row A
+                            if (rowLetter == "A" && (col == 0 || col == 9)) {
+                              return const SizedBox.shrink();
+                            }
+
+                            final String code = seatCodeForGrid(row, col);
+                            final bool isOccupied = occupiedSeats.contains(
+                              code,
+                            );
+                            final bool isSelected = selectedSeats.contains(
+                              code,
+                            );
+
+                            Color seatColor;
+                            Widget? seatIcon;
+
+                            if (isOccupied) {
+                              seatColor = AppColours.red;
+                              seatIcon = null;
+                            } else if (isSelected) {
+                              seatColor = Colors.green;
+                              seatIcon = const Icon(
+                                Icons.check,
+                                size: 16,
+                                color: Colors.white,
+                              );
+                            } else {
+                              seatColor = AppColours.lightGrey;
+                              seatIcon = null;
+                            }
+
+                            return GestureDetector(
+                              onTap: () {
+                                if (!isOccupied) {
+                                  setState(() {
+                                    if (isSelected) {
+                                      selectedSeats.remove(code);
+                                    } else {
+                                      selectedSeats.add(code);
+                                    }
+                                  });
+                                }
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: seatColor,
+                                  borderRadius: BorderRadius.circular(6),
+                                ),
+                                child: Center(child: seatIcon),
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              }),
             ),
 
             // Select Seats Button
