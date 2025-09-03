@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:jp_cinema_app/components/app_bar3.dart';
 import 'package:jp_cinema_app/components/bottom_nav_bar.dart';
 import 'package:jp_cinema_app/components/main_button.dart';
 import 'package:jp_cinema_app/utils/app_colours.dart';
@@ -30,185 +31,219 @@ class _Screen1State extends State<Screen1Page> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: const BottomNavBar(selectedIndex: 2),
-      backgroundColor: Colors.black,
-      extendBodyBehindAppBar: false,
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Navigator.pop(context),
-        ),
-        title: const Text(
-          "Booking",
-          style: TextStyles.size16WeightBoldConthraxSemiBold,
-        ),
-        centerTitle: true,
-      ),
-      body: Column(
-        children: [
-          Stack(
-            children: [
-              Container(
-                height: 100,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("assets/images/Moana2.jpg"),
-                    fit: BoxFit.cover,
+      backgroundColor: AppColours.black,
+      appBar: buildAppBar3(context, "Booking"),
+
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            // Movie header
+            Stack(
+              children: [
+                Container(
+                  height: 89,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/images/Moana2.jpg"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+                    child: Container(color: AppColours.black.withOpacity(0.4)),
                   ),
                 ),
-                child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-                  child: Container(color: Colors.black.withOpacity(0.4)),
-                ),
-              ),
-              Positioned(
-                left: 16,
-                bottom: 10,
-                child: Row(
-                  children: [
-                    // circular image
-                    ClipOval(
-                      child: Image.asset(
-                        "assets/images/Moana2.jpg",
-                        width: 80,
-                        height: 80,
-                        fit: BoxFit.cover,
+                Positioned(
+                  left: 16,
+                  bottom: 10,
+                  child: Row(
+                    children: [
+                      ClipOval(
+                        child: Image.asset(
+                          "assets/images/Moana2.jpg",
+                          width: 80,
+                          height: 80,
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ),
-                    const SizedBox(width: 20),
-                    Column(
+                      const SizedBox(width: 20),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Moana 2",
+                            style: TextStyles.size16WeightBoldConthraxSemiBold,
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            "Thursday, 15 Jan, 2025",
+                            style: TextStyles.size10Promptwhite,
+                          ),
+                          const SizedBox(height: 4),
+                          Row(
+                            children: [
+                              // Vertical bar
+                              Container(
+                                width: 4,
+                                height: 10,
+                                color: AppColours.royalBlue,
+                              ),
+                              const SizedBox(width: 5),
+
+                              // Text
+                              Text(
+                                "Platinum - A Cinematic Escape into the Night",
+                                style: TextStyles.size8ConthraxSemiBold
+                                    .copyWith(color: AppColours.royalBlue),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+
+            const SizedBox(height: 30),
+
+            // Legend Section
+            Text(
+              "Select Your Seats",
+              style: TextStyles.size16WeightBoldConthraxSemiBold,
+            ),
+            const SizedBox(height: 20),
+            Divider(color: AppColours.lightGrey.withOpacity(0.6)),
+            const SizedBox(height: 20),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          "Moana 2",
-                          style: TextStyles.size16WeightBoldConthraxSemiBold,
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          "Thursday, 15 Jan, 2025",
-                          style: TextStyles.size10Promptwhite,
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          "Gold - A Touch of Classic Elegance",
-                          style: TextStyles.size8ConthraxSemiBold,
-                        ),
+                        legendBox(AppColours.lightGrey, "Available"),
+                        const SizedBox(height: 30),
+                        legendBox(AppColours.red, "Occupied"),
                       ],
                     ),
-                  ],
-                ),
-              ),
-            ],
-          ),
+                  ),
 
-          const SizedBox(height: 30),
-
-          // Legend Section
-          Text(
-            "Select Your Seats",
-            style: TextStyles.size16WeightBoldConthraxSemiBold,
-          ),
-          const SizedBox(height: 12),
-          Divider(color: AppColours.lightGrey.withOpacity(0.7)),
-
-          // Available + Selected row
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              legendBox(AppColours.white, "Available"),
-              const SizedBox(width: 150),
-              legendBox(Colors.green, "Selected Seat(s)"),
-            ],
-          ),
-          const SizedBox(height: 15),
-
-          // Occupied below
-          legendBox(Colors.red, "Occupied"),
-
-          const SizedBox(height: 15),
-          Divider(color: AppColours.lightGrey.withOpacity(0.7)),
-          const SizedBox(height: 20),
-
-          // Golden curve
-          CustomPaint(painter: CurvePainter(), child: Container(height: 40)),
-          const Text(
-            "SCREEN",
-            style: TextStyles.size14WeightBoldConthraxSemiBold,
-          ),
-
-          const SizedBox(height: 20),
-
-          // Seat Grid
-          Expanded(
-            child: GridView.builder(
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: cols,
-                crossAxisSpacing: 6,
-                mainAxisSpacing: 6,
-              ),
-              itemCount: rows * cols,
-              itemBuilder: (context, index) {
-                int row = index ~/ cols;
-                int col = index % cols;
-                String code = seatCode(row, col);
-
-                bool isOccupied = occupiedSeats.contains(code);
-                bool isSelected = selectedSeats.contains(code);
-
-                Color seatColor;
-                if (isOccupied) {
-                  seatColor = Colors.red;
-                } else if (isSelected) {
-                  seatColor = Colors.green;
-                } else {
-                  seatColor = Colors.white;
-                }
-
-                return GestureDetector(
-                  onTap: () {
-                    if (!isOccupied) {
-                      setState(() {
-                        if (isSelected) {
-                          selectedSeats.remove(code);
-                        } else {
-                          selectedSeats.add(code);
-                        }
-                      });
-                    }
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: seatColor,
-                      borderRadius: BorderRadius.circular(6),
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.topRight,
+                      child: legendBox(Colors.green, "Selected Seat(s)"),
                     ),
                   ),
-                );
-              },
+                ],
+              ),
             ),
-          ),
 
-          // Select Seats Button
-          Padding(
-            padding: const EdgeInsets.all(12),
-            child: MainButton(
-              label: "SELECT SEATS",
-              onPressed: () {
-                if (selectedSeats.isNotEmpty) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(
-                        "Seats booked: ${selectedSeats.join(", ")}",
+            const SizedBox(height: 25),
+            Divider(color: AppColours.lightGrey.withOpacity(0.6)),
+            const SizedBox(height: 20),
+
+            // search icon
+            Padding(
+              padding: const EdgeInsets.only(right: 12, bottom: 4),
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.search, color: AppColours.white),
+                  tooltip: 'Search',
+                ),
+              ),
+            ),
+
+            // Golden curve
+            CustomPaint(painter: CurvePainter(), child: Container(height: 40)),
+            const Text(
+              "SCREEN",
+              style: TextStyles.size14WeightBoldConthraxSemiBold,
+            ),
+
+            const SizedBox(height: 20),
+
+            // Seat Grid
+            SizedBox(
+              height: 400,
+              child: GridView.builder(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 30,
+                  vertical: 10,
+                ),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: cols,
+                  crossAxisSpacing: 6,
+                  mainAxisSpacing: 6,
+                ),
+                itemCount: rows * cols,
+                itemBuilder: (context, index) {
+                  int row = index ~/ cols;
+                  int col = index % cols;
+                  String code = seatCode(row, col);
+
+                  bool isOccupied = occupiedSeats.contains(code);
+                  bool isSelected = selectedSeats.contains(code);
+
+                  Color seatColor;
+                  if (isOccupied) {
+                    seatColor = AppColours.red;
+                  } else if (isSelected) {
+                    seatColor = Colors.green;
+                  } else {
+                    seatColor = AppColours.white;
+                  }
+
+                  return GestureDetector(
+                    onTap: () {
+                      if (!isOccupied) {
+                        setState(() {
+                          if (isSelected) {
+                            selectedSeats.remove(code);
+                          } else {
+                            selectedSeats.add(code);
+                          }
+                        });
+                      }
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: seatColor,
+                        borderRadius: BorderRadius.circular(6),
                       ),
                     ),
                   );
-                }
-              },
-              backgroundColor: AppColours.gold,
+                },
+              ),
             ),
-          ),
-        ],
+
+            // Select Seats Button
+            Padding(
+              padding: const EdgeInsets.all(12),
+              child: MainButton(
+                label: "SELECT SEATS",
+                onPressed: () {
+                  if (selectedSeats.isNotEmpty) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          "Seats booked: ${selectedSeats.join(", ")}",
+                        ),
+                      ),
+                    );
+                  }
+                },
+                backgroundColor: AppColours.gold,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -239,8 +274,8 @@ class CurvePainter extends CustomPainter {
     final paint = Paint()
       ..color = AppColours.gold
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 3
-      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 3);
+      ..strokeWidth = 2
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 2);
 
     final path = Path();
     path.moveTo(0, size.height);
