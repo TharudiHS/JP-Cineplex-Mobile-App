@@ -57,6 +57,16 @@ class TextStyles {
     fontSize: 12,
     color: AppColours.lightGrey,
   );
+  static const TextStyle size12PromptLightgrey70 = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 12,
+    color: AppColours.grey70,
+  );
+  static const TextStyle size10PromptLightgrey70 = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 10,
+    color: AppColours.grey70,
+  );
   static const TextStyle size16PromptLight = TextStyle(
     fontFamily: 'Prompt',
     fontSize: 16,
