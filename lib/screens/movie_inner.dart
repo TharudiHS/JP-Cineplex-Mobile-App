@@ -1,6 +1,6 @@
 // lib/screens/movie_inner.dart
 import 'package:flutter/material.dart';
-import 'package:jp_cinema_app/screens/screen1.dart';
+import 'package:jp_cinema_app/data/models/showtime_card.dart';
 import '../components/app_bar2.dart';
 import '../components/bottom_nav_bar.dart';
 import '../data/models/movie_model.dart';
@@ -191,61 +191,29 @@ class MovieInnerPage extends StatelessWidget {
                   _dateTabs(),
                   const SizedBox(height: 12),
 
-                  _showtimeCard(
-                    "Screen 1",
-                    "10:30 AM",
+                  ShowtimeCard(
+                    screen: "Screen 1",
+                    time: "10:30 AM",
                     stripColor: AppColours.royalBlue,
                     textColor: AppColours.royalBlue,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Screen1Page(),
-                        ),
-                      );
-                    },
                   ),
-                  _showtimeCard(
-                    "Screen 2",
-                    "10:30 AM",
+                  ShowtimeCard(
+                    screen: "Screen 2",
+                    time: "10:30 AM",
                     stripColor: AppColours.crimsonRed,
                     textColor: AppColours.crimsonRed,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Screen1Page(),
-                        ),
-                      );
-                    },
                   ),
-                  _showtimeCard(
-                    "Screen 3 - Luxe",
-                    "10:30 AM",
+                  ShowtimeCard(
+                    screen: "Screen 3 - Luxe",
+                    time: "10:30 AM",
                     stripColor: AppColours.bronze,
                     textColor: AppColours.bronze,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Screen1Page(),
-                        ),
-                      );
-                    },
                   ),
-                  _showtimeCard(
-                    "Screen 4",
-                    "10:30 AM",
+                  ShowtimeCard(
+                    screen: "Screen 4",
+                    time: "10:30 AM",
                     stripColor: AppColours.lavender,
                     textColor: AppColours.lavender,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Screen1Page(),
-                        ),
-                      );
-                    },
                   ),
                 ],
               ),
@@ -305,87 +273,6 @@ class MovieInnerPage extends StatelessWidget {
       color: AppColours.gold,
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
       child: Icon(icon, color: AppColours.black, size: 22),
-    );
-  }
-
-  Widget _showtimeCard(
-    String screen,
-    String time, {
-    required Color stripColor,
-    required Color textColor,
-    required VoidCallback onTap,
-  }) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Stack(
-        children: [
-          // Background image
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Image.asset(
-              "assets/images/showtime-box-bg.png",
-              width: double.infinity,
-              height: 100,
-              fit: BoxFit.cover,
-            ),
-          ),
-
-          // The original card
-          Container(
-            margin: const EdgeInsets.symmetric(vertical: 6),
-            decoration: BoxDecoration(color: AppColours.black),
-            child: Row(
-              children: [
-                // Left colored strip
-                Container(
-                  width: 12,
-                  height: 80,
-                  decoration: BoxDecoration(color: stripColor),
-                ),
-
-                // Content
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 14,
-                      vertical: 12,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          screen,
-                          style: TextStyle(
-                            color: textColor,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(time, style: TextStyles.size24Promptwhitegold),
-                      ],
-                    ),
-                  ),
-                ),
-
-                // Right-side icons (PNG)
-                Padding(
-                  padding: const EdgeInsets.only(right: 12),
-                  child: Row(
-                    children: [
-                      Image.asset("assets/images/dolby.png", height: 30),
-                      const SizedBox(width: 8),
-                      Image.asset("assets/images/3d.png", height: 30),
-                      const SizedBox(width: 8),
-                      Image.asset("assets/images/IR.png", height: 30),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
