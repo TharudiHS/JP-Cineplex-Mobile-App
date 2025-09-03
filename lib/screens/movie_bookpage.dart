@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jp_cinema_app/components/app_bar2.dart';
 import 'package:jp_cinema_app/components/bottom_nav_bar.dart';
+import 'package:jp_cinema_app/data/models/showtime_card.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
 
@@ -54,27 +55,27 @@ class MovieBookPage extends StatelessWidget {
                   title: "Snow White",
                   location: "At Jp Cineplex - Kandy",
                   showtimeWidgets: [
-                    _showtimeCard(
-                      "Screen 1",
-                      "10:30 AM",
+                    ShowtimeCard(
+                      screen: "Screen 1",
+                      time: "10:30 AM",
                       stripColor: AppColours.royalBlue,
                       textColor: AppColours.royalBlue,
                     ),
-                    _showtimeCard(
-                      "Screen 2",
-                      "10:30 AM",
+                    ShowtimeCard(
+                      screen: "Screen 2",
+                      time: "10:30 AM",
                       stripColor: AppColours.crimsonRed,
                       textColor: AppColours.crimsonRed,
                     ),
-                    _showtimeCard(
-                      "Screen 3 - Luxe",
-                      "10:30 AM",
+                    ShowtimeCard(
+                      screen: "Screen 3 - Luxe",
+                      time: "10:30 AM",
                       stripColor: AppColours.bronze,
                       textColor: AppColours.bronze,
                     ),
-                    _showtimeCard(
-                      "Screen 4",
-                      "10:30 AM",
+                    ShowtimeCard(
+                      screen: "Screen 4",
+                      time: "10:30 AM",
                       stripColor: AppColours.lavender,
                       textColor: AppColours.lavender,
                     ),
@@ -86,27 +87,27 @@ class MovieBookPage extends StatelessWidget {
                   title: "Indian 2",
                   location: "At Jp Cineplex - Kandy",
                   showtimeWidgets: [
-                    _showtimeCard(
-                      "Screen 1",
-                      "10:30 AM",
+                    ShowtimeCard(
+                      screen: "Screen 1",
+                      time: "10:30 AM",
                       stripColor: AppColours.royalBlue,
                       textColor: AppColours.royalBlue,
                     ),
-                    _showtimeCard(
-                      "Screen 2",
-                      "10:30 AM",
+                    ShowtimeCard(
+                      screen: "Screen 2",
+                      time: "10:30 AM",
                       stripColor: AppColours.crimsonRed,
                       textColor: AppColours.crimsonRed,
                     ),
-                    _showtimeCard(
-                      "Screen 3 - Luxe",
-                      "10:30 AM",
+                    ShowtimeCard(
+                      screen: "Screen 3 - Luxe",
+                      time: "10:30 AM",
                       stripColor: AppColours.bronze,
                       textColor: AppColours.bronze,
                     ),
-                    _showtimeCard(
-                      "Screen 4",
-                      "10:30 AM",
+                    ShowtimeCard(
+                      screen: "Screen 4",
+                      time: "10:30 AM",
                       stripColor: AppColours.lavender,
                       textColor: AppColours.lavender,
                     ),
@@ -118,27 +119,27 @@ class MovieBookPage extends StatelessWidget {
                   title: "Sky Force",
                   location: "At Jp Cineplex - Kandy",
                   showtimeWidgets: [
-                    _showtimeCard(
-                      "Screen 1",
-                      "10:30 AM",
+                    ShowtimeCard(
+                      screen: "Screen 1",
+                      time: "10:30 AM",
                       stripColor: AppColours.royalBlue,
                       textColor: AppColours.royalBlue,
                     ),
-                    _showtimeCard(
-                      "Screen 2",
-                      "10:30 AM",
+                    ShowtimeCard(
+                      screen: "Screen 2",
+                      time: "10:30 AM",
                       stripColor: AppColours.crimsonRed,
                       textColor: AppColours.crimsonRed,
                     ),
-                    _showtimeCard(
-                      "Screen 3 - Luxe",
-                      "10:30 AM",
+                    ShowtimeCard(
+                      screen: "Screen 3 - Luxe",
+                      time: "10:30 AM",
                       stripColor: AppColours.bronze,
                       textColor: AppColours.bronze,
                     ),
-                    _showtimeCard(
-                      "Screen 4",
-                      "10:30 AM",
+                    ShowtimeCard(
+                      screen: "Screen 4",
+                      time: "10:30 AM",
                       stripColor: AppColours.lavender,
                       textColor: AppColours.lavender,
                     ),
@@ -196,88 +197,6 @@ class MovieBookPage extends StatelessWidget {
       color: AppColours.gold,
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
       child: Icon(icon, color: AppColours.black, size: 22),
-    );
-  }
-
-  //  Showtime Card
-  Widget _showtimeCard(
-    String screen,
-    String time, {
-    required Color stripColor,
-    required Color textColor,
-  }) {
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 6),
-      child: Stack(
-        children: [
-          // Background image
-          ClipRRect(
-            child: Image.asset(
-              "assets/images/showtime-box-bg.png",
-              width: double.infinity,
-              height: 100,
-              fit: BoxFit.cover,
-            ),
-          ),
-          // Card content
-          Container(
-            height: 100,
-            decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.8),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Row(
-              children: [
-                // Left colored strip
-                Container(
-                  width: 12,
-                  height: double.infinity,
-                  color: stripColor,
-                ),
-
-                // Content
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 14,
-                      vertical: 12,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          screen,
-                          style: TextStyle(
-                            color: textColor,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(time, style: TextStyles.size24Promptwhitegold),
-                      ],
-                    ),
-                  ),
-                ),
-
-                // Right-side icons
-                Padding(
-                  padding: const EdgeInsets.only(right: 12),
-                  child: Row(
-                    children: [
-                      Image.asset("assets/images/dolby.png", height: 30),
-                      const SizedBox(width: 8),
-                      Image.asset("assets/images/3d.png", height: 30),
-                      const SizedBox(width: 8),
-                      Image.asset("assets/images/IR.png", height: 30),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
     );
   }
 
