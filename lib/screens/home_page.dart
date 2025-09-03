@@ -11,13 +11,15 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColours.black,
-      bottomNavigationBar: const BottomNavBar(selectedIndex: 0),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(120),
+        child: JPAppBar2(title: "Home"),
+      ),
+
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const JPAppBar2(title: "Home"),
-
             const SizedBox(height: 30),
 
             // My Orders
@@ -238,6 +240,7 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: const BottomNavBar(selectedIndex: 0),
     );
   }
 

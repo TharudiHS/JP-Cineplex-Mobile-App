@@ -14,11 +14,13 @@ class MoviesPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColours.black,
       bottomNavigationBar: const BottomNavBar(selectedIndex: 1),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(120),
+        child: const JPAppBar2(title: "Movies"),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const JPAppBar2(title: "Movies"),
-
             // Search bar
             Container(
               margin: const EdgeInsets.all(12),

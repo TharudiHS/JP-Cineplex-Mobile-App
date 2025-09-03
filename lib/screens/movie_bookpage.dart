@@ -12,11 +12,14 @@ class MovieBookPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColours.black,
       bottomNavigationBar: const BottomNavBar(selectedIndex: 2),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(120),
+        child: const JPAppBar2(title: "Book"),
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const JPAppBar2(title: "Book"),
             const SizedBox(height: 30),
 
             // Date Tabs
