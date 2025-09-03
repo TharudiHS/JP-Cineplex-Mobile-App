@@ -21,7 +21,6 @@ class ShowtimeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Navigation logic is inside the widget
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => const Screen1Page()),
