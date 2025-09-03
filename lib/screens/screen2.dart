@@ -215,80 +215,148 @@ class _Screen2PageState extends State<Screen2Page> {
             const SizedBox(height: 20),
 
             //  SEAT GRID
-            GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
+            Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 6),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: cols,
-                crossAxisSpacing: 6,
-                mainAxisSpacing: 6,
-                childAspectRatio: 1.0,
-              ),
-              itemCount: (rows - 1) * cols,
-              itemBuilder: (context, index) {
-                final int gridRow = index ~/ cols;
-                final int col = index % cols;
-                final String code = seatCodeForGrid(gridRow, col);
+              child: Column(
+                children: List.generate(rows, (gridRow) {
+                  final int letterIndex = (rows - 1) - gridRow; // J..A
+                  final String rowLabel = String.fromCharCode(65 + letterIndex);
 
-                final bool isOccupied = occupiedSeats.contains(code);
-                final bool isSelected = selectedSeats.contains(code);
-
-                return GestureDetector(
-                  onTap: () {
-                    if (!isOccupied) {
-                      setState(() {
-                        if (isSelected) {
-                          selectedSeats.remove(code);
-                        } else {
-                          selectedSeats.add(code);
-                        }
-                      });
-                    }
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: isOccupied
-                          ? AppColours.red
-                          : isSelected
-                          ? Colors.green
-                          : AppColours.lightGrey,
-                      borderRadius: BorderRadius.circular(6),
-                    ),
-                    child: Center(
-                      child: isSelected
-                          ? const Icon(
-                              Icons.check,
-                              size: 16,
-                              color: Colors.white,
-                            )
-                          : null,
-                    ),
-                  ),
-                );
-              },
-            ),
-            const SizedBox(height: 15),
-
-            //  FAMILY / COUPLE SEATS ROW
-            Transform.translate(
-              offset: const Offset(0, -8),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 30,
-                  vertical: 6,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: familySeats.map((code) {
+                  // ----- A ROW: FAMILY / COUPLE
+                  if (rowLabel == 'A') {
                     return Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 6),
-                      child: _familySeatTile(code),
+                      padding: const EdgeInsets.symmetric(vertical: 6),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          // Left-side row label
+                          SizedBox(
+                            width: 20,
+                            child: Text(
+                              'A',
+                              style: TextStyles.size12Promptwhite,
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+
+                          Expanded(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: familySeats.map((code) {
+                                return Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 6,
+                                  ),
+                                  child: Container(
+                                    width: 52,
+                                    height: 30,
+                                    decoration: BoxDecoration(
+                                      color: AppColours.lightGrey,
+                                      borderRadius: BorderRadius.circular(6),
+                                      border: Border.all(
+                                        color: Colors.black.withOpacity(0.18),
+                                        width: 1,
+                                      ),
+                                    ),
+                                    child: const Center(
+                                      child: Icon(
+                                        Icons.favorite_border,
+                                        size: 18,
+                                        color: Colors.black87,
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }).toList(),
+                            ),
+                          ),
+                        ],
+                      ),
                     );
-                  }).toList(),
-                ),
+                  }
+
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 3),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        // Left-side row label
+                        SizedBox(
+                          width: 20,
+                          child: Text(
+                            rowLabel,
+                            style: TextStyles.size12Promptwhite,
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+
+                        // Seats for this row
+                        Expanded(
+                          child: GridView.builder(
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: cols,
+                                  crossAxisSpacing: 6,
+                                  mainAxisSpacing: 6,
+                                  childAspectRatio: 1.0,
+                                ),
+                            itemCount: cols,
+                            itemBuilder: (context, col) {
+                              final String code = seatCodeForGrid(gridRow, col);
+                              final bool isOccupied = occupiedSeats.contains(
+                                code,
+                              );
+                              final bool isSelected = selectedSeats.contains(
+                                code,
+                              );
+
+                              return GestureDetector(
+                                onTap: () {
+                                  if (!isOccupied) {
+                                    setState(() {
+                                      if (isSelected) {
+                                        selectedSeats.remove(code);
+                                      } else {
+                                        selectedSeats.add(code);
+                                      }
+                                    });
+                                  }
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: isOccupied
+                                        ? AppColours.red
+                                        : isSelected
+                                        ? Colors.green
+                                        : AppColours.lightGrey,
+                                    borderRadius: BorderRadius.circular(6),
+                                  ),
+                                  child: Center(
+                                    child: isSelected
+                                        ? const Icon(
+                                            Icons.check,
+                                            size: 16,
+                                            color: Colors.white,
+                                          )
+                                        : null,
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                }),
               ),
             ),
+
+            const SizedBox(height: 15),
 
             //  SELECT SEATS BUTTON
             Padding(
@@ -332,21 +400,6 @@ class _Screen2PageState extends State<Screen2Page> {
         const SizedBox(width: 6),
         Text(text, style: TextStyles.size12Promptwhite),
       ],
-    );
-  }
-
-  Widget _familySeatTile(String code) {
-    return Container(
-      width: 52,
-      height: 30,
-      decoration: BoxDecoration(
-        color: AppColours.lightGrey,
-        borderRadius: BorderRadius.circular(6),
-        border: Border.all(color: Colors.black.withOpacity(0.18), width: 1),
-      ),
-      child: const Center(
-        child: Icon(Icons.favorite_border, size: 18, color: Colors.black87),
-      ),
     );
   }
 }
