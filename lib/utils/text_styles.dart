@@ -95,6 +95,11 @@ class TextStyles {
     fontSize: 15,
     color: AppColours.white,
   );
+  static const TextStyle size16Promptgold = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 15,
+    color: AppColours.gold,
+  );
   static const TextStyle size12WeightBoldConthraxSemiBoldgold = TextStyle(
     fontFamily: 'Conthrax',
     fontSize: 12,
