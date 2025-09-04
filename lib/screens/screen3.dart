@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:jp_cinema_app/components/app_bar3.dart';
 import 'package:jp_cinema_app/components/bottom_nav_bar.dart';
 import 'package:jp_cinema_app/components/main_button.dart';
+import 'package:jp_cinema_app/screens/ticket_type_page.dart';
 import 'package:jp_cinema_app/utils/app_colours.dart';
 import 'package:jp_cinema_app/utils/text_styles.dart';
 
@@ -424,15 +425,12 @@ class _Screen2PageState extends State<Screen3Page> {
               child: MainButton(
                 label: "SELECT SEATS",
                 onPressed: () {
-                  if (selectedSeats.isNotEmpty) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text(
-                          "Seats booked: ${selectedSeats.join(", ")}",
-                        ),
-                      ),
-                    );
-                  }
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ChooseTicketTypePage(),
+                    ),
+                  );
                 },
                 backgroundColor: AppColours.gold,
               ),
