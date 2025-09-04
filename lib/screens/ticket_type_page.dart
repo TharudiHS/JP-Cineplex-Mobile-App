@@ -6,15 +6,171 @@ import 'package:jp_cinema_app/components/main_button.dart';
 import 'package:jp_cinema_app/utils/app_colours.dart';
 import 'package:jp_cinema_app/utils/text_styles.dart';
 
-class ChooseTicketTypePage extends StatelessWidget {
+class ChooseTicketTypePage extends StatefulWidget {
   const ChooseTicketTypePage({super.key});
+
+  @override
+  State<ChooseTicketTypePage> createState() => _ChooseTicketTypePageState();
+}
+
+class _ChooseTicketTypePageState extends State<ChooseTicketTypePage> {
+  bool _isExpanded = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const BottomNavBar(selectedIndex: 2),
       backgroundColor: AppColours.black,
       appBar: buildAppBar3(context, "Ticket Type - 10:00"),
+
+      //  booking summary
+      bottomNavigationBar: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          GestureDetector(
+            onTap: () => setState(() => _isExpanded = !_isExpanded),
+            child: AnimatedSize(
+              duration: const Duration(milliseconds: 220),
+              curve: Curves.easeInOut,
+              child: Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 25,
+                ),
+                constraints: const BoxConstraints(minHeight: 64),
+                decoration: BoxDecoration(
+                  color: AppColours.black,
+                  border: const Border(
+                    top: BorderSide(color: AppColours.white, width: 1.5),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColours.black.withOpacity(0.35),
+                      blurRadius: 6,
+                      offset: const Offset(0, -2),
+                    ),
+                  ],
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Booking",
+                                  style: TextStyles
+                                      .size16WeightBoldConthraxSemiBold,
+                                ),
+                                SizedBox(height: 2),
+                                Text(
+                                  "Summary",
+                                  style: TextStyles
+                                      .size16WeightBoldConthraxSemiBold,
+                                ),
+                              ],
+                            ),
+                            const SizedBox(width: 6),
+                            Icon(
+                              _isExpanded
+                                  ? Icons.keyboard_arrow_up
+                                  : Icons.keyboard_arrow_down,
+                              color: AppColours.white,
+                              size: 20,
+                            ),
+                          ],
+                        ),
+
+                        if (!_isExpanded)
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              const Text(
+                                "Total Price",
+                                style: TextStyles.size15Promptwhite,
+                              ),
+                              const SizedBox(width: 10),
+                              Text(
+                                "LKR 2,920.00",
+                                style: TextStyles.size16Promptgold,
+                              ),
+                            ],
+                          ),
+                      ],
+                    ),
+
+                    // BODY
+                    if (_isExpanded) ...[
+                      const SizedBox(height: 12),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+                          Text(
+                            "Adult Tickets  1X",
+                            style: TextStyles.size14PromptLightwhite,
+                          ),
+                          Text(
+                            "LKR 1,800.00",
+                            style: TextStyles.size14PromptLightwhite,
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+                          Text(
+                            "Child Tickets  2X",
+                            style: TextStyles.size14PromptLightwhite,
+                          ),
+                          Text(
+                            "LKR 1,000.00",
+                            style: TextStyles.size14PromptLightwhite,
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+                          Text(
+                            "Booking Fee",
+                            style: TextStyles.size12Promptwhite,
+                          ),
+                          Text(
+                            "LKR 120.00",
+                            style: TextStyles.size12Promptwhite,
+                          ),
+                        ],
+                      ),
+                      const Divider(color: Colors.white24, height: 16),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                            "Total Price",
+                            style: TextStyles.size15Promptwhite,
+                          ),
+                          Text(
+                            "LKR 2,920.00",
+                            style: TextStyles.size16Promptgold,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+            ),
+          ),
+
+          const BottomNavBar(selectedIndex: 2),
+        ],
+      ),
+
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -55,22 +211,19 @@ class ChooseTicketTypePage extends StatelessWidget {
                             style: TextStyles.size16WeightBoldConthraxSemiBold,
                           ),
                           const SizedBox(height: 4),
-                          Text(
+                          const Text(
                             "Thursday, 15 Jan, 2025",
                             style: TextStyles.size10Promptwhite,
                           ),
                           const SizedBox(height: 4),
                           Row(
                             children: [
-                              // Vertical bar
                               Container(
                                 width: 4,
                                 height: 10,
                                 color: AppColours.white,
                               ),
                               const SizedBox(width: 5),
-
-                              // Text
                               Text(
                                 "10.30 AM, Screen - 1, JP Cineplex Kandy, Seats:L1,L2,L3",
                                 style: TextStyles.size8ConthraxSemiBold
@@ -88,12 +241,12 @@ class ChooseTicketTypePage extends StatelessWidget {
 
             const SizedBox(height: 16),
 
-            //Ticket section
+            // Ticket section (unchanged)
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 16),
               padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                image: const DecorationImage(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
                   image: AssetImage("assets/images/showtime-box-bg.png"),
                   fit: BoxFit.cover,
                 ),
@@ -101,7 +254,6 @@ class ChooseTicketTypePage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Selected seat count row
                   Row(
                     children: [
                       const Icon(
@@ -135,26 +287,17 @@ class ChooseTicketTypePage extends StatelessWidget {
                       ),
                     ],
                   ),
-
                   const SizedBox(height: 25),
-
-                  // Adult row
                   _ticketRow(title: "Adult Tickets", price: "LKR 1,800.00"),
-
                   const SizedBox(height: 12),
                   const Divider(color: Colors.white24, height: 1.5),
                   const SizedBox(height: 12),
-
-                  // Child row
                   _ticketRow(
                     title: "Child Tickets",
                     price: "LKR 500.00",
                     subtitle: "(Under 12 Years Old)",
                   ),
-
                   const SizedBox(height: 16),
-
-                  // Note
                   const Text(
                     "Please Note A LKR 60.00 Booking Fee Is Charged Per \nTicket Booked Online.",
                     style: TextStyles.size12PromptLightgrey70,
@@ -165,7 +308,7 @@ class ChooseTicketTypePage extends StatelessWidget {
 
             const SizedBox(height: 24),
 
-            // Buttons
+            // Buttons (unchanged)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Container(
@@ -205,7 +348,6 @@ class ChooseTicketTypePage extends StatelessWidget {
   }) {
     return Row(
       children: [
-        // Left texts
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -218,8 +360,6 @@ class ChooseTicketTypePage extends StatelessWidget {
             ],
           ),
         ),
-
-        // Right quantity controls (static UI)
         _qtySquare(icon: Icons.remove),
         const SizedBox(width: 12),
         const Text("01", style: TextStyles.size15Promptwhite),
@@ -233,7 +373,7 @@ class ChooseTicketTypePage extends StatelessWidget {
     return Container(
       width: 40,
       height: 30,
-      decoration: BoxDecoration(color: AppColours.gold),
+      decoration: const BoxDecoration(color: AppColours.gold),
       alignment: Alignment.center,
       child: Icon(icon, size: 15, color: AppColours.black),
     );
