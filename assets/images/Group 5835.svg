@@ -1,0 +1,467 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="412" height="426.719" viewBox="0 0 412 426.719">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="0.879" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#c4c4c4"/>
+      <stop offset="1" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_5835" data-name="Group 5835" transform="translate(0 36.719)">
+    <g id="Group_4886" data-name="Group 4886" transform="translate(0 -34.626)">
+      <g id="screen" transform="translate(0 0)">
+        <g id="Group_736" data-name="Group 736">
+          <g id="Group_696" data-name="Group 696" transform="translate(0)">
+            <path id="Path_459" data-name="Path 459" d="M5381.9-6344.085l-26.757,84.744h412l-27.931-84.744-26.09-6.991-36.282-9.344-48.377-7.645-61.739-3.226h-34.961l-25.407,2.06-35.83,3.888-30.618,4.8-40.173,9.836Z" transform="translate(-5355.143 6372.773)" opacity="0.11" fill="url(#linear-gradient)"/>
+            <g id="Group_695" data-name="Group 695" transform="translate(24.576)">
+              <path id="Path_457" data-name="Path 457" d="M5398.53-6333.5s167.436-52.157,363.277-.06" transform="translate(-5398.53 6356.703)" fill="none" stroke="#847640" stroke-width="4"/>
+              <path id="Path_458" data-name="Path 458" d="M5400-6333.257s165.847-52.1,361.771,0" transform="translate(-5399.194 6358.762)" fill="none" stroke="#212121" stroke-width="5"/>
+            </g>
+          </g>
+        </g>
+        <text id="SCREEN-2" data-name="SCREEN" transform="translate(175 41.534)" fill="#fff" font-size="12" font-family="Conthrax-SemiBold, Conthrax" font-weight="600"><tspan x="0" y="0">SCREEN</tspan></text>
+      </g>
+    </g>
+    <g id="Group_5865" data-name="Group 5865" transform="translate(0 79)">
+      <g id="Group_5756" data-name="Group 5756" transform="translate(45 245)">
+        <g id="Rectangle_1311" data-name="Rectangle 1311" transform="translate(33)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1319" data-name="Rectangle 1319" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1314" data-name="Rectangle 1314" transform="translate(99)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1316" data-name="Rectangle 1316" transform="translate(165)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1318" data-name="Rectangle 1318" transform="translate(231)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1312" data-name="Rectangle 1312" transform="translate(66)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1313" data-name="Rectangle 1313" transform="translate(132)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1315" data-name="Rectangle 1315" transform="translate(198)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1317" data-name="Rectangle 1317" transform="translate(264)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1320" data-name="Rectangle 1320" transform="translate(297)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1367" data-name="Rectangle 1367" transform="translate(33 41)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1368" data-name="Rectangle 1368" transform="translate(99 41)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1369" data-name="Rectangle 1369" transform="translate(165 41)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1370" data-name="Rectangle 1370" transform="translate(231 41)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1371" data-name="Rectangle 1371" transform="translate(66 41)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1372" data-name="Rectangle 1372" transform="translate(132 41)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1373" data-name="Rectangle 1373" transform="translate(198 41)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1374" data-name="Rectangle 1374" transform="translate(264 41)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+      </g>
+      <g id="Group_5757" data-name="Group 5757" transform="translate(45 210)">
+        <g id="Rectangle_1311-2" data-name="Rectangle 1311" transform="translate(33)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1319-2" data-name="Rectangle 1319" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1314-2" data-name="Rectangle 1314" transform="translate(99)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1316-2" data-name="Rectangle 1316" transform="translate(165)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1318-2" data-name="Rectangle 1318" transform="translate(231)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1312-2" data-name="Rectangle 1312" transform="translate(66)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1313-2" data-name="Rectangle 1313" transform="translate(132)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1315-2" data-name="Rectangle 1315" transform="translate(198)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1317-2" data-name="Rectangle 1317" transform="translate(264)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1320-2" data-name="Rectangle 1320" transform="translate(297)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Group_5758" data-name="Group 5758" transform="translate(33 76)">
+          <g id="Rectangle_1001" data-name="Rectangle 1001" fill="#44d610" stroke="#2aa100" stroke-width="1">
+            <rect width="25" height="25" rx="4" stroke="none"/>
+            <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+          </g>
+          <path id="Path_16768" data-name="Path 16768" d="M-14596.588-15200.068l4.363,4.342,10.092-9.686" transform="translate(14601.86 15213.069)" fill="none" stroke="#fff" stroke-width="3"/>
+        </g>
+        <g id="Group_5759" data-name="Group 5759" transform="translate(66 76)">
+          <g id="Rectangle_1001-2" data-name="Rectangle 1001" fill="#44d610" stroke="#2aa100" stroke-width="1">
+            <rect width="25" height="25" rx="4" stroke="none"/>
+            <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+          </g>
+          <path id="Path_16768-2" data-name="Path 16768" d="M-14596.588-15200.068l4.363,4.342,10.092-9.686" transform="translate(14601.86 15213.069)" fill="none" stroke="#fff" stroke-width="3"/>
+        </g>
+        <g id="Group_5839" data-name="Group 5839" transform="translate(99 76)">
+          <g id="Rectangle_1001-3" data-name="Rectangle 1001" fill="#44d610" stroke="#2aa100" stroke-width="1">
+            <rect width="25" height="25" rx="4" stroke="none"/>
+            <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+          </g>
+          <path id="Path_16768-3" data-name="Path 16768" d="M-14596.588-15200.068l4.363,4.342,10.092-9.686" transform="translate(14601.86 15213.069)" fill="none" stroke="#fff" stroke-width="3"/>
+        </g>
+      </g>
+      <g id="Group_5760" data-name="Group 5760" transform="translate(45 175)">
+        <g id="Rectangle_1311-3" data-name="Rectangle 1311" transform="translate(33)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1319-3" data-name="Rectangle 1319" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1314-3" data-name="Rectangle 1314" transform="translate(99)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1316-3" data-name="Rectangle 1316" transform="translate(165)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1318-3" data-name="Rectangle 1318" transform="translate(231)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1312-3" data-name="Rectangle 1312" transform="translate(66)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1313-3" data-name="Rectangle 1313" transform="translate(132)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1315-3" data-name="Rectangle 1315" transform="translate(198)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1317-3" data-name="Rectangle 1317" transform="translate(264)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1320-3" data-name="Rectangle 1320" transform="translate(297)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+      </g>
+      <g id="Group_5761" data-name="Group 5761" transform="translate(45 140)">
+        <g id="Rectangle_1311-4" data-name="Rectangle 1311" transform="translate(33)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1319-4" data-name="Rectangle 1319" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1314-4" data-name="Rectangle 1314" transform="translate(99)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1316-4" data-name="Rectangle 1316" transform="translate(165)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1318-4" data-name="Rectangle 1318" transform="translate(231)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1312-4" data-name="Rectangle 1312" transform="translate(66)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1313-4" data-name="Rectangle 1313" transform="translate(132)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1315-4" data-name="Rectangle 1315" transform="translate(198)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1317-4" data-name="Rectangle 1317" transform="translate(264)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1320-4" data-name="Rectangle 1320" transform="translate(297)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+      </g>
+      <g id="Group_5762" data-name="Group 5762" transform="translate(45 105)">
+        <g id="Rectangle_1311-5" data-name="Rectangle 1311" transform="translate(33)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1319-5" data-name="Rectangle 1319" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1314-5" data-name="Rectangle 1314" transform="translate(99)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1316-5" data-name="Rectangle 1316" transform="translate(165)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1318-5" data-name="Rectangle 1318" transform="translate(231)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1312-5" data-name="Rectangle 1312" transform="translate(66)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1313-5" data-name="Rectangle 1313" transform="translate(132)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1315-5" data-name="Rectangle 1315" transform="translate(198)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1317-5" data-name="Rectangle 1317" transform="translate(264)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1320-5" data-name="Rectangle 1320" transform="translate(297)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+      </g>
+      <g id="Group_5763" data-name="Group 5763" transform="translate(45 70)">
+        <g id="Rectangle_1311-6" data-name="Rectangle 1311" transform="translate(33)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1319-6" data-name="Rectangle 1319" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1314-6" data-name="Rectangle 1314" transform="translate(99)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1316-6" data-name="Rectangle 1316" transform="translate(165)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1318-6" data-name="Rectangle 1318" transform="translate(231)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1312-6" data-name="Rectangle 1312" transform="translate(66)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1313-6" data-name="Rectangle 1313" transform="translate(132)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1315-6" data-name="Rectangle 1315" transform="translate(198)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1317-6" data-name="Rectangle 1317" transform="translate(264)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1320-6" data-name="Rectangle 1320" transform="translate(297)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+      </g>
+      <g id="Group_5764" data-name="Group 5764" transform="translate(45 35)">
+        <g id="Rectangle_1311-7" data-name="Rectangle 1311" transform="translate(33)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1319-7" data-name="Rectangle 1319" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1314-7" data-name="Rectangle 1314" transform="translate(99)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1316-7" data-name="Rectangle 1316" transform="translate(165)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1318-7" data-name="Rectangle 1318" transform="translate(231)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1312-7" data-name="Rectangle 1312" transform="translate(66)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1313-7" data-name="Rectangle 1313" transform="translate(132)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1315-7" data-name="Rectangle 1315" transform="translate(198)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1317-7" data-name="Rectangle 1317" transform="translate(264)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1320-7" data-name="Rectangle 1320" transform="translate(297)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+      </g>
+      <g id="Group_5765" data-name="Group 5765" transform="translate(45)">
+        <g id="Rectangle_1311-8" data-name="Rectangle 1311" transform="translate(33)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1319-8" data-name="Rectangle 1319" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1314-8" data-name="Rectangle 1314" transform="translate(99)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1316-8" data-name="Rectangle 1316" transform="translate(165)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1318-8" data-name="Rectangle 1318" transform="translate(231)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1312-8" data-name="Rectangle 1312" transform="translate(66)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1313-8" data-name="Rectangle 1313" transform="translate(132)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1315-8" data-name="Rectangle 1315" transform="translate(198)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1317-8" data-name="Rectangle 1317" transform="translate(264)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1320-8" data-name="Rectangle 1320" transform="translate(297)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+      </g>
+      <text id="A" transform="translate(18 306)" fill="#707070" font-size="12" font-family="Prompt-Regular, Prompt"><tspan x="0" y="0">A</tspan></text>
+      <text id="B" transform="translate(19 261)" fill="#707070" font-size="12" font-family="Prompt-Regular, Prompt"><tspan x="0" y="0">B</tspan></text>
+      <text id="C" transform="translate(18 226)" fill="#707070" font-size="12" font-family="Prompt-Regular, Prompt"><tspan x="0" y="0">C</tspan></text>
+      <text id="D" transform="translate(19 191)" fill="#707070" font-size="12" font-family="Prompt-Regular, Prompt"><tspan x="0" y="0">D</tspan></text>
+      <text id="E" transform="translate(19 156)" fill="#707070" font-size="12" font-family="Prompt-Regular, Prompt"><tspan x="0" y="0">E</tspan></text>
+      <text id="F" transform="translate(19 121)" fill="#707070" font-size="12" font-family="Prompt-Regular, Prompt"><tspan x="0" y="0">F</tspan></text>
+      <text id="G" transform="translate(18 86)" fill="#707070" font-size="12" font-family="Prompt-Regular, Prompt"><tspan x="0" y="0">G</tspan></text>
+      <text id="H" transform="translate(19 52)" fill="#707070" font-size="12" font-family="Prompt-Regular, Prompt"><tspan x="0" y="0">H</tspan></text>
+      <text id="I" transform="translate(21 16)" fill="#707070" font-size="12" font-family="Prompt-Regular, Prompt"><tspan x="0" y="0">I</tspan></text>
+      <g id="Group_5838" data-name="Group 5838" transform="translate(45 -35)">
+        <g id="Rectangle_1311-9" data-name="Rectangle 1311" transform="translate(33)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1319-9" data-name="Rectangle 1319" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1314-9" data-name="Rectangle 1314" transform="translate(99)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1316-9" data-name="Rectangle 1316" transform="translate(165)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1318-9" data-name="Rectangle 1318" transform="translate(231)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1312-9" data-name="Rectangle 1312" transform="translate(66)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1313-9" data-name="Rectangle 1313" transform="translate(132)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1315-9" data-name="Rectangle 1315" transform="translate(198)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1317-9" data-name="Rectangle 1317" transform="translate(264)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+        <g id="Rectangle_1320-9" data-name="Rectangle 1320" transform="translate(297)" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="1">
+          <rect width="25" height="25" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="24" height="24" rx="3.5" fill="none"/>
+        </g>
+      </g>
+      <text id="J" transform="translate(21 -19)" fill="#707070" font-size="12" font-family="Prompt-Regular, Prompt"><tspan x="0" y="0">J</tspan></text>
+    </g>
+  </g>
+</svg>
