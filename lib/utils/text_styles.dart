@@ -18,6 +18,47 @@ class TextStyles {
     fontSize: 14,
     color: AppColours.white,
   );
+  static const TextStyle size12PromptLightroyalBlue = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 14,
+    fontWeight: FontWeight.bold,
+    color: AppColours.royalBlue,
+  );
+  static const TextStyle size8PromptLightroyalBlue = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 8,
+    fontWeight: FontWeight.bold,
+    color: AppColours.royalBlue,
+  );
+  static const TextStyle size14PromptLightblack = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 14,
+    fontWeight: FontWeight.bold,
+    color: AppColours.black,
+  );
+  static const TextStyle size22PromptLightblack = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 22,
+    fontWeight: FontWeight.bold,
+    color: AppColours.black,
+  );
+  static const TextStyle size16PromptLightred = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 16,
+    color: AppColours.red,
+  );
+  static const TextStyle size24PromptLightblack = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+    color: AppColours.black,
+  );
+  static const TextStyle size48PromptLight = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 48,
+    fontWeight: FontWeight.bold,
+    color: AppColours.black,
+  );
   static const TextStyle size20WeightBoldConthraxSemiBold = TextStyle(
     fontFamily: 'Conthrax',
     fontSize: 20,
@@ -29,6 +70,12 @@ class TextStyles {
     fontSize: 24,
     fontWeight: FontWeight.bold,
     color: AppColours.white,
+  );
+  static const TextStyle size24WeightBoldConthraxSemiBoldblack = TextStyle(
+    fontFamily: 'Conthrax',
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+    color: AppColours.black,
   );
   static const TextStyle size14WeightBoldConthraxSemiBoldblack = TextStyle(
     fontFamily: 'Conthrax',
@@ -61,6 +108,11 @@ class TextStyles {
     fontFamily: 'Prompt',
     fontSize: 12,
     color: AppColours.grey70,
+  );
+  static const TextStyle size14PromptLightgreyA5 = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 14,
+    color: AppColours.greyA5,
   );
   static const TextStyle size10PromptLightgrey70 = TextStyle(
     fontFamily: 'Prompt',
@@ -97,7 +149,12 @@ class TextStyles {
   );
   static const TextStyle size16Promptgold = TextStyle(
     fontFamily: 'Prompt',
-    fontSize: 15,
+    fontSize: 16,
+    color: AppColours.gold,
+  );
+  static const TextStyle size8Promptgold = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 8,
     color: AppColours.gold,
   );
   static const TextStyle size12WeightBoldConthraxSemiBoldgold = TextStyle(
@@ -130,6 +187,21 @@ class TextStyles {
     fontFamily: 'Prompt',
     fontSize: 12,
     color: AppColours.white,
+  );
+  static const TextStyle size12Promptblack = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 12,
+    color: AppColours.black,
+  );
+  static const TextStyle size20Promptwhite = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 20,
+    color: AppColours.white,
+  );
+  static const TextStyle size20Promptgold = TextStyle(
+    fontFamily: 'Prompt',
+    fontSize: 20,
+    color: AppColours.gold,
   );
   static const TextStyle size12Promptwhitegold = TextStyle(
     fontFamily: 'Prompt',

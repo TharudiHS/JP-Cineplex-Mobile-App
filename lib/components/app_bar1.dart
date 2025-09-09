@@ -1,4 +1,3 @@
-// lib/components/app_bar1.dart
 import 'package:flutter/material.dart';
 import '../utils/text_styles.dart';
 

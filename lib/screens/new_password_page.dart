@@ -37,7 +37,6 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                 const JPAppBar1(title: "New Password"),
 
                 // New Password Field
-                // New Password Field
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

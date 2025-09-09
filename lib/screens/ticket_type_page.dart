@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:jp_cinema_app/components/app_bar3.dart';
 import 'package:jp_cinema_app/components/bottom_nav_bar.dart';
 import 'package:jp_cinema_app/components/main_button.dart';
+import 'package:jp_cinema_app/screens/payment_page.dart';
 import 'package:jp_cinema_app/utils/app_colours.dart';
 import 'package:jp_cinema_app/utils/text_styles.dart';
 
@@ -258,7 +259,7 @@ class _ChooseTicketTypePageState extends State<ChooseTicketTypePage> {
                     children: [
                       const Icon(
                         Icons.diamond_outlined,
-                        color: Colors.white70,
+                        color: AppColours.white,
                         size: 16,
                       ),
                       const SizedBox(width: 8),
@@ -329,7 +330,14 @@ class _ChooseTicketTypePageState extends State<ChooseTicketTypePage> {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: MainButton(
                 label: "PROCEED TO CHECK OUT",
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const PaymentPage(),
+                    ),
+                  );
+                },
                 backgroundColor: AppColours.gold,
                 textStyle: TextStyles.size14WeightBoldConthraxSemiBoldblack,
               ),

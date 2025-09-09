@@ -5,7 +5,7 @@ import 'package:jp_cinema_app/components/text_form_field.dart';
 import 'package:jp_cinema_app/screens/login_page.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
-import 'verification.dart'; // adjust path if this file lives elsewhere
+import 'verification.dart';
 
 class ResetPasswordPage extends StatefulWidget {
   const ResetPasswordPage({super.key});

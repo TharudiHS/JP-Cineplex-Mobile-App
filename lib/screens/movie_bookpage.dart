@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:jp_cinema_app/components/app_bar2.dart';
 import 'package:jp_cinema_app/components/bottom_nav_bar.dart';
 import 'package:jp_cinema_app/data/models/showtime_card.dart';
@@ -193,16 +194,20 @@ class MovieBookPage extends StatelessWidget {
 
   Widget _dateTab(String label, bool selected) {
     return Container(
-      margin: const EdgeInsets.only(right: 2),
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+      height: 50,
+      alignment: Alignment.center,
+      padding: const EdgeInsets.symmetric(horizontal: 18),
       decoration: BoxDecoration(
         color: selected ? AppColours.gold : const Color(0xFF1C1C1C),
+        border: Border(bottom: BorderSide(color: AppColours.gold, width: 1)),
       ),
       child: Text(
         label,
         style: TextStyle(
-          color: selected ? AppColours.black : Colors.grey,
+          color: selected ? AppColours.black : Colors.grey.shade500,
           fontWeight: FontWeight.bold,
+          fontSize: 14,
+          letterSpacing: 1.2,
         ),
       ),
     );
@@ -210,13 +215,13 @@ class MovieBookPage extends StatelessWidget {
 
   Widget _arrowButton(IconData icon) {
     return Container(
+      height: 50,
+      width: 50,
       color: AppColours.gold,
-      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
       child: Icon(icon, color: AppColours.black, size: 22),
     );
   }
 
-  //  Movie Card
   Widget _buildMovieCard(
     BuildContext context, {
     required String imagePath,
@@ -246,13 +251,54 @@ class MovieBookPage extends StatelessWidget {
               children: [
                 // Poster
                 Center(
-                  child: ClipRRect(
-                    child: Image.asset(
-                      imagePath,
-                      height: 310,
-                      width: 220,
-                      fit: BoxFit.cover,
-                    ),
+                  child: Stack(
+                    children: [
+                      ClipRRect(
+                        child: Image.asset(
+                          imagePath,
+                          height: 310,
+                          width: 220,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+
+                      // Overlay icons
+                      Positioned(
+                        bottom: 2,
+                        left: 0,
+                        right: 0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            GestureDetector(
+                              onTap: () {},
+                              child: SvgPicture.asset(
+                                "assets/images/play-icon.svg",
+                                width: 70,
+                                height: 70,
+                                colorFilter: const ColorFilter.mode(
+                                  Colors.white,
+                                  BlendMode.srcIn,
+                                ),
+                              ),
+                            ),
+
+                            GestureDetector(
+                              onTap: () {},
+                              child: SvgPicture.asset(
+                                "assets/images/info-icon.svg",
+                                width: 70,
+                                height: 70,
+                                colorFilter: const ColorFilter.mode(
+                                  Colors.white,
+                                  BlendMode.srcIn,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
 

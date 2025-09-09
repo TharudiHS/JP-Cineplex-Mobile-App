@@ -223,7 +223,7 @@ class _Screen2PageState extends State<Screen4Page> {
                   final int letterIndex = (rows - 1) - gridRow; // J..A
                   final String rowLabel = String.fromCharCode(65 + letterIndex);
 
-                  // ----- A ROW: FAMILY / COUPLE
+                  //  FAMILY / COUPLE
                   if (rowLabel == 'A') {
                     return Padding(
                       padding: const EdgeInsets.symmetric(vertical: 6),

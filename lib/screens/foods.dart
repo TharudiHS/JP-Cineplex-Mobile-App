@@ -86,17 +86,20 @@ class FoodsPage extends StatelessWidget {
 
   Widget _selectTab(String label, bool selected) {
     return Container(
-      margin: const EdgeInsets.only(right: 2),
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+      height: 50,
+      alignment: Alignment.center,
+      padding: const EdgeInsets.symmetric(horizontal: 18),
       decoration: BoxDecoration(
         color: selected ? AppColours.gold : const Color(0xFF1C1C1C),
-        borderRadius: BorderRadius.circular(6),
+        border: Border(bottom: BorderSide(color: AppColours.gold, width: 1)),
       ),
       child: Text(
         label,
         style: TextStyle(
-          color: selected ? AppColours.black : Colors.grey,
+          color: selected ? AppColours.black : Colors.grey.shade500,
           fontWeight: FontWeight.bold,
+          fontSize: 14,
+          letterSpacing: 1.2,
         ),
       ),
     );
@@ -104,8 +107,9 @@ class FoodsPage extends StatelessWidget {
 
   Widget _arrowButton(IconData icon) {
     return Container(
+      height: 50,
+      width: 50,
       color: AppColours.gold,
-      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
       child: Icon(icon, color: AppColours.black, size: 22),
     );
   }

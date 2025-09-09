@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jp_cinema_app/components/app_bar2.dart';
 import 'package:jp_cinema_app/components/bottom_nav_bar.dart';
+import 'package:jp_cinema_app/screens/order_details.dart';
 import '../utils/app_colours.dart';
 import '../utils/text_styles.dart';
 
@@ -39,7 +40,14 @@ class HomePage extends StatelessWidget {
                   ),
                   const SizedBox(height: 12),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const OrderDetailsPage(),
+                        ),
+                      );
+                    },
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [

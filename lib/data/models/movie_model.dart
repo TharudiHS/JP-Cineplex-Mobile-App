@@ -1,4 +1,3 @@
-// lib/viewmodels/movie_model.dart
 class MovieModel {
   final String image;
   final String title;
